@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  7 MAR 2018 20:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  7 MAR 2018 21:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -606,24 +606,32 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-No file LAB1_LAMBRANO_ROJAS_SANCHEZ.aux.
+(./LAB1_LAMBRANO_ROJAS_SANCHEZ.aux
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+
+
+LaTeX Warning: Label `panel' multiply defined.
+
+)
 \openout1 = `LAB1_LAMBRANO_ROJAS_SANCHEZ.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+
 -- Lines per column: 50 (exact).
-LaTeX Info: Redefining \. on input line 15.
-LaTeX Info: Redefining \% on input line 15.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count122
@@ -686,748 +694,297 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count128
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 37.
-LaTeX Font Info:    Try loading font information for U+msa on input line 37.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 29.
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 37.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 37.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 29.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+Underfull \hbox (badness 10000) in paragraph at lines 140--149
 
-LaTeX Warning: Reference `oscilador' on page 1 undefined on input line 89.
+ []
 
-
-LaTeX Warning: File `oscilador_relajacion.png' not found on input line 94.
-
-
-! Package pdftex.def Error: File `oscilador_relajacion.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.94 {oscilador_relajacion.png}
-                               
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `res_time' on page 1 undefined on input line 128.
-
-LaTeX Info: Redefining \. on input line 134.
-LaTeX Info: Redefining \% on input line 134.
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-
-LaTeX Warning: Reference `res_time' on page 2 undefined on input line 138.
-
-
-LaTeX Warning: Reference `res_impulso' on page 2 undefined on input line 154.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--158
+Underfull \hbox (badness 10000) in paragraph at lines 159--167
 
  []
 
 
-LaTeX Warning: File `impulse_response.png' not found on input line 162.
-
-
-! Package pdftex.def Error: File `impulse_response.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.162 {impulse_response.png}
-                            
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--176
-
- []
-
-
-LaTeX Warning: File `step_response.png' not found on input line 180.
-
-
-! Package pdftex.def Error: File `step_response.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.180 {step_response.png}
-                         
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 1675) in paragraph at lines 186--190
+Underfull \hbox (badness 1675) in paragraph at lines 177--181
 \OT1/ptm/m/n/12 se ob-ser-va que no hay es-ta-bi-li-dad en nin-gun
  []
 
 
-Underfull \hbox (badness 2134) in paragraph at lines 186--190
+Underfull \hbox (badness 2134) in paragraph at lines 177--181
 \OT1/ptm/m/n/12 mo-men-to, ya que la se[]nal de sa-li-da siem-pre
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--190
+Underfull \hbox (badness 10000) in paragraph at lines 177--181
 
  []
 
 
-LaTeX Warning: File `ramp_response.png' not found on input line 194.
-
-
-! Package pdftex.def Error: File `ramp_response.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.194 {ramp_response.png}
-                         
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `parabole_response.png' not found on input line 202.
-
-
-! Package pdftex.def Error: File `parabole_response.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.202 {parabole_response.png}
-                             
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 207.
-LaTeX Info: Redefining \% on input line 207.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--221
+Underfull \hbox (badness 10000) in paragraph at lines 204--212
 
  []
 
 
-LaTeX Warning: Reference `bloqDiag' on page 3 undefined on input line 226.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 222--234
+Underfull \hbox (badness 10000) in paragraph at lines 213--225
 
  []
 
 
-LaTeX Warning: File `controlNivelAzucar.jpg' not found on input line 238.
-
-
-! Package pdftex.def Error: File `controlNivelAzucar.jpg' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.238 {controlNivelAzucar.jpg}
-                              
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Info: Redefining \. on input line 254.
-LaTeX Info: Redefining \% on input line 254.
-[3]
-Underfull \hbox (badness 1552) in paragraph at lines 274--279
+Underfull \hbox (badness 1552) in paragraph at lines 265--270
 \OT1/ptm/m/n/12 Un sis-te-ma de se-gun-do or-den es mu-cho m[]as
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--279
+Underfull \hbox (badness 10000) in paragraph at lines 265--270
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 294--298
+LaTeX Info: Redefining \. on input line 270.
+LaTeX Info: Redefining \% on input line 270.
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 285--289
 \OT1/ptm/m/n/12 se pu-do cal-cu-lar con bas-tan-te fa-ci-li-dad la
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--298
+Underfull \hbox (badness 10000) in paragraph at lines 285--289
 
  []
 
 
-LaTeX Warning: Reference `equ_transf' on page 4 undefined on input line 319.
-
-
-LaTeX Warning: Reference `equ5' on page 4 undefined on input line 334.
-
-
-LaTeX Warning: Reference `equ6' on page 4 undefined on input line 334.
-
-
-LaTeX Warning: Reference `equ7' on page 4 undefined on input line 342.
-
-
-Overfull \hbox (24.8451pt too wide) in paragraph at lines 366--366
+Overfull \hbox (24.8451pt too wide) in paragraph at lines 357--357
 [] 
  []
 
-LaTeX Info: Redefining \. on input line 374.
-LaTeX Info: Redefining \% on input line 374.
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 386--399
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--390
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 406.
+LaTeX Info: Redefining \. on input line 390.
+LaTeX Info: Redefining \% on input line 390.
+[3]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 397.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 406.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 397.
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--420
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 440--444
+Underfull \hbox (badness 10000) in paragraph at lines 407--411
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--462
+Underfull \hbox (badness 10000) in paragraph at lines 431--435
 
  []
 
 
-LaTeX Warning: Reference `Step_response' on page 5 undefined on input line 474.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 466--475
+Underfull \hbox (badness 10000) in paragraph at lines 449--453
 
  []
 
 
-LaTeX Warning: File `graficomat.png' not found on input line 485.
+Underfull \hbox (badness 10000) in paragraph at lines 457--466
+
+ []
 
 
-! Package pdftex.def Error: File `graficomat.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.485 ...[clip,width=\columnwidth]{graficomat.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `Step_response' on page 5 undefined on input line 495.
-
-
-
-Underfull \hbox (badness 2310) in paragraph at lines 490--498
+Underfull \hbox (badness 2310) in paragraph at lines 481--489
 []\OT1/ptm/m/n/12 Se pue-de ob-ser-var que los va-lo-res que se
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--498
-
- []
-
-LaTeX Info: Redefining \. on input line 498.
-LaTeX Info: Redefining \% on input line 498.
-[5]
-
-LaTeX Warning: Reference `Step_response' on page 6 undefined on input line 499.
-
-
-
-LaTeX Warning: Reference `Step_response' on page 6 undefined on input line 503.
-
-
-
-LaTeX Warning: Reference `Parametros_NAS' on page 6 undefined on input line 504
-.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 499--505
+Underfull \hbox (badness 10000) in paragraph at lines 481--489
 
  []
 
 
-LaTeX Warning: File `time_rate.png' not found on input line 508.
-
-
-! Package pdftex.def Error: File `time_rate.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.508 ...lip,width=0.6\columnwidth]{time_rate.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `time_p.png' not found on input line 510.
-
-
-! Package pdftex.def Error: File `time_p.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.510 ...s[clip,width=0.6\columnwidth]{time_p.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `time_stb.png' not found on input line 512.
-
-
-! Package pdftex.def Error: File `time_stb.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.512 ...clip,width=0.6\columnwidth]{time_stb.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 518--525
+Underfull \hbox (badness 10000) in paragraph at lines 490--496
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--533
+Underfull \hbox (badness 10000) in paragraph at lines 509--516
 
  []
 
-LaTeX Info: Redefining \. on input line 562.
-LaTeX Info: Redefining \% on input line 562.
-[6]
+LaTeX Info: Redefining \. on input line 516.
+LaTeX Info: Redefining \% on input line 516.
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 517--524
 
-LaTeX Warning: Reference `Step_response_A' on page 7 undefined on input line 56
-6.
-
-
-LaTeX Warning: Reference `Step_response_B' on page 7 undefined on input line 56
-6.
+ []
 
 
-LaTeX Warning: Reference `Step_response_A' on page 7 undefined on input line 56
-8.
-
-
-Underfull \hbox (badness 1629) in paragraph at lines 564--576
+Underfull \hbox (badness 1629) in paragraph at lines 555--567
 \OT1/ptm/m/n/12 se in-ter-sec-tan en los mis-mos pun-tos se pu-do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 564--576
+Underfull \hbox (badness 10000) in paragraph at lines 555--567
 
  []
 
 
-LaTeX Warning: File `diferentsValuesA.png' not found on input line 580.
-
-
-! Package pdftex.def Error: File `diferentsValuesA.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.580 {diferentsValuesA.png}
-                            
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `Step_response_B' on page 7 undefined on input line 59
-7.
-
-
-LaTeX Warning: File `diferentsValuesB.png' not found on input line 602.
-
-
-! Package pdftex.def Error: File `diferentsValuesB.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.602 {diferentsValuesB.png}
-                            
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 1688) in paragraph at lines 611--621
+Underfull \hbox (badness 1688) in paragraph at lines 602--612
 \OT1/ptm/m/n/12 ca-paz de pro-du-cir ese ti-po de res-pues-ta. Los
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 611--621
+Underfull \hbox (badness 1365) in paragraph at lines 602--612
 \OT1/ptm/m/n/12 bas-tan-te bien al mo-de-lo. Adem[]as en-con-trar la
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--621
+Underfull \hbox (badness 10000) in paragraph at lines 602--612
 
  []
 
-
-LaTeX Warning: Reference `fig1' on page 7 undefined on input line 634.
-
-
-LaTeX Warning: Reference `fig6' on page 7 undefined on input line 634.
-
-
-LaTeX Warning: File `ho_sobreamortiguada.png' not found on input line 640.
+LaTeX Info: Redefining \. on input line 664.
+LaTeX Info: Redefining \% on input line 664.
+[5]
+Underfull \hbox (badness 1389) in paragraph at lines 675--678
+\OT1/ptm/m/n/12 el usua-rio, f[]acil de uti-li-zar y que con-su-mie-ra
+ []
 
 
-! Package pdftex.def Error: File `ho_sobreamortiguada.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.640 {ho_sobreamortiguada.png}
-                               
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \vbox (badness 2680) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 643.
-LaTeX Info: Redefining \% on input line 643.
- [7]
-
-LaTeX Warning: File `hosuba.png' not found on input line 647.
-
-
-! Package pdftex.def Error: File `hosuba.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.647 {hosuba.png}
-                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `stark_sobreamortiguado.png' not found on input line 656.
-
-
-! Package pdftex.def Error: File `stark_sobreamortiguado.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.656 {stark_sobreamortiguado.png}
-                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Warning: File `stark_subamortiguada.png' not found on input line 663.
-
-
-! Package pdftex.def Error: File `stark_subamortiguada.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.663 {stark_subamortiguada.png}
-                                
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `ziegler_sobreamortiguada.png' not found on input line 670.
-
-
-
-! Package pdftex.def Error: File `ziegler_sobreamortiguada.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.670 {ziegler_sobreamortiguada.png}
-                                    
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 673.
-LaTeX Info: Redefining \% on input line 673.
- [8]
-
-LaTeX Warning: File `ziegler_subamortiguada.png' not found on input line 677.
-
-
-! Package pdftex.def Error: File `ziegler_subamortiguada.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.677 {ziegler_subamortiguada.png}
-                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `GUI' on page 9 undefined on input line 686.
-
-
-Underfull \hbox (badness 1742) in paragraph at lines 684--687
+Underfull \hbox (badness 1742) in paragraph at lines 675--678
 \OT1/ptm/m/n/12 que cal-cu-lan ca-da par[]ame-tro de la ma-triz de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--687
+Underfull \hbox (badness 10000) in paragraph at lines 675--678
 
  []
 
 
-Underfull \hbox (badness 3118) in paragraph at lines 688--691
+Underfull \hbox (badness 3118) in paragraph at lines 679--682
 []\OT1/ptm/m/n/12 Para es-ta eta-pa del pro-yec-to in-te-gra-dor se
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 688--691
+Underfull \hbox (badness 10000) in paragraph at lines 679--682
 
  []
 
 
-LaTeX Warning: Reference `panel' on page 9 undefined on input line 694.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 692--697
+Underfull \hbox (badness 10000) in paragraph at lines 683--688
 
  []
 
 
-LaTeX Warning: File `panel_PI.png' not found on input line 701.
-
-
-! Package pdftex.def Error: File `panel_PI.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.701 {panel_PI.png}
-                    
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 3679) in paragraph at lines 705--714
+Underfull \hbox (badness 3679) in paragraph at lines 696--705
 []\OT1/ptm/m/n/12 Tambi[]en la in-ter-faz de usua-rio le per-mi-te
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 705--714
+Underfull \hbox (badness 1389) in paragraph at lines 696--705
 \OT1/ptm/m/n/12 al usua-rio de-ci-dir la en-tra-da del sis-te-ma. Las
  []
 
 
-Underfull \hbox (badness 1769) in paragraph at lines 705--714
+Underfull \hbox (badness 1769) in paragraph at lines 696--705
 \OT1/ptm/m/n/12 im-pul-so, es-cal[]on y ram-pa. El bot[]on \OT1/ptm/b/n/12 Gra-
 fi-car
  []
 
 
-Underfull \hbox (badness 2285) in paragraph at lines 705--714
+Underfull \hbox (badness 2285) in paragraph at lines 696--705
 \OT1/ptm/b/n/12 va-rias res-pues-tas \OT1/ptm/m/n/12 per-mi-te la vi-sua-li-za-
 ci[]on de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--714
-
- []
-
-LaTeX Info: Redefining \. on input line 714.
-LaTeX Info: Redefining \% on input line 714.
-[9]
-
-LaTeX Warning: File `selecion_entrada.png' not found on input line 718.
-
-
-! Package pdftex.def Error: File `selecion_entrada.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.718 {selecion_entrada.png}
-                            
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `GUI' on page 10 undefined on input line 723.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 722--724
+Underfull \hbox (badness 10000) in paragraph at lines 696--705
 
  []
 
 
-LaTeX Warning: File `Interfaz_grafica.png' not found on input line 728.
+Underfull \hbox (badness 10000) in paragraph at lines 713--715
+
+ []
 
 
-! Package pdftex.def Error: File `Interfaz_grafica.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.728 {Interfaz_grafica.png}
-                            
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 733--739
+Underfull \hbox (badness 10000) in paragraph at lines 724--730
  \OT1/ptm/m/it/12 Fun-cio-na-mien-to: [] \OT1/ptm/m/n/12 Pa-ra ini-ciar el pro-
 gra-ma
  []
 
 
-Underfull \hbox (badness 2134) in paragraph at lines 733--739
+Underfull \hbox (badness 2134) in paragraph at lines 724--730
 \OT1/ptm/m/n/12 el GUI y Si-mu-link. Se pro-ce-de co-rrien-do el
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 733--739
+Underfull \hbox (badness 1389) in paragraph at lines 724--730
 \OT1/ptm/m/n/12 de Si-mu-link. La in-ter-faz gr[]afi-ca se en-con-trar[]a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 733--739
+Underfull \hbox (badness 10000) in paragraph at lines 724--730
+
+ []
+
+LaTeX Info: Redefining \. on input line 730.
+LaTeX Info: Redefining \% on input line 730.
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 731--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 740--746
+Underfull \hbox (badness 10000) in paragraph at lines 738--743
 
  []
 
+LaTeX Info: Redefining \. on input line 745.
+LaTeX Info: Redefining \% on input line 745.
+[7
 
-Underfull \hbox (badness 10000) in paragraph at lines 747--752
-
- []
-
-LaTeX Info: Redefining \. on input line 754.
-LaTeX Info: Redefining \% on input line 754.
-[10] (./LAB1_LAMBRANO_ROJAS_SANCHEZ.aux
+] (./LAB1_LAMBRANO_ROJAS_SANCHEZ.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 )
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6388 strings out of 493029
- 91765 string characters out of 6136234
- 177522 words of memory out of 5000000
- 9799 multiletter control sequences out of 15000+600000
- 43930 words of font info for 101 fonts, out of 8000000 for 9000
+ 6363 strings out of 493029
+ 91462 string characters out of 6136234
+ 178815 words of memory out of 5000000
+ 9797 multiletter control sequences out of 15000+600000
+ 43444 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,32p,402b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,32p,395b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
@@ -1443,10 +1000,10 @@ ive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on LAB1_LAMBRANO_ROJAS_SANCHEZ.pdf (10 pages, 189493 bytes).
+Output written on LAB1_LAMBRANO_ROJAS_SANCHEZ.pdf (7 pages, 183517 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
