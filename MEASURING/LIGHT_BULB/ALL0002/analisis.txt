@@ -1,0 +1,19 @@
+>> analysis
+
+elapsed_time =
+
+    0.0196
+
+T     =     0.0167 s (one period)
+f0    =    59.9520 Hz (fundamental frequency)
+Vrms  =   124.1567 V
+Irms  =     0.5352 A
+S     =    66.4510 VA
+Pavg  =    53.6436 W (directly using definition)
+P     =    53.6436 W (based on Fourier series)
+Q     =    23.4808 VAR (based on Fourier series)
+D_fast=    31.4126 VA (distortion power, fast, easy from S^2)
+D     =    31.4106 VA (distortion power, slow, full computation)
+PF    =     0.8073 (power factor)
+THD_V =     2.1370 %
+THD_I =    53.4772 %
