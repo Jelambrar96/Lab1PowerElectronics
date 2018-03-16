@@ -29,13 +29,9 @@ for Journals}
 \maketitle
 
 \begin{abstract}
-En el presente documento se describe detalladamente el
-procedimiento utilizado para modelar matem\'aticamente el
-comportamiento de diferentes sistemas de control.
-Asimismo, tambi\'en se expone el an\'alisis de los resultados
-obtenidos al realizar el modelamiento de esos sistemas.
-Finalmente, se describe un avance del 
-dise\~no y del funcionamiento del proyecto integrador.   
+This report presents the design and implementation of a security box 
+and a dimmer circuit using DIACs and TRIACs. The reader also can find 
+the validation review with the theoretical model seen in class.    
 \end{abstract}
 
 %-----------------------------------------------------------
@@ -50,17 +46,68 @@ Ganancia, Sistema de control
 \IEEEpeerreviewmaketitle
 %--------------------------------------------------------------------------
 
-%\section{Objetivos}
+\section{INTRODUCTION}
 
-%\subsection{Objetivo General}
-%\item Lograr analizar y  dise\~nar sistemas de control 
+The main purpose of this practice is to perform an analysis on the 
+wave form and measurements of three different type of load. Inside the 
+security box there is a fuse to protect the equipment from any 
+shortcut. We used a shunt resistor of 1 $\Omega$ and 10 W to measure 
+current dividing the voltage by 1 to obtain the actual current value.
+All electronics devices are composed of resistances, capacitors and 
+inductances, a soldering iron is a resistive linear load, they require 
+heat to work. The voltage measured would be the same as the source but 
+the current will vary depending on the power consumption of the 
+device. We expect the same waveform for the voltage and current and no 
+phase shift between them.\\
 
-%\subsection{Objetivos Espec\'ificos}
+A drill would be an inductive linear load, based on the fact that 
+motors are made of inductive coils. It should be a phase shift between 
+voltage and current. The laptop is a nonlinear load, the voltage 
+waveform would be the same but we expect a different shape for the 
+current \textsuperscript{[1]}. \\
 
-%\section{Conclusiones}
+The second part consists on designing and developing an AC controller 
+made of DIACs and TRIACs. This kind of circuit is able to change the 
+RMS voltage on the terminals of a linear load by manipulating the 
+firing angle of the TRIAC using a potentiometer. The load will not be 
+linear anymore because of the electronic circuit resultant of the 
+resistive load in series with the AC controller.\\
 
-\section{PROCEDIMIENTO\\}
+%--------------------------------------------------------------------
 
+\section{PROCEDURE}
+
+The purpose of this practice is to measure the power consumption on 
+electrical home devices, such as a laptop, a drill and a soldering 
+iron. Taking into account that they work with high values of voltage 
+and current compared with previous labs, precautions were taken in 
+order to protect the devices and our integrity. The following picture 
+shows the circuit proposed by the teacher to measure voltage and 
+current safely: 
+
+\begin{figure}[h]
+%\centering
+%\includegraphics[clip,width=\columnwidth]
+%{oscilador_relajacion.png}
+\caption{Circuit Diagram.}
+\label{circuit_diagram}
+\end{figure}
+
+V\textsubscript{ac} represents the 120 Vrms sine wave obtained from 
+the university phase line, \textit{Fuse} represents a 3A circuit 
+breaker, \textit{Load} represents the load and \textit{Rshunt} 
+represents the 1 $\Omega$ and 10 W 
+power resistor. We chose a small value for the resistor to do not 
+affect the functioning of the circuit. \\
+
+The circuit is inside a 4x4 box with a fuse holder to change the 
+breaker, 4 measuring terminals; the white one for neutral, green one 
+for ground and  both black one for phase. The box is shown in the 
+following picture:
+
+
+
+%--------------------------------------------------------------------
 \subsection{Dise\~no y an\'alisis de un sistema de primer
 orden: Oscilador de relajaci\'on, Schmitt Trigger}
 
@@ -80,13 +127,7 @@ valor de la entrada inversora. El circuito del cual se obtuvo
 la funci\'on de transferencia se observa en la Figura
 \ref{oscilador}. 
 
-\begin{figure}[h]
-%\centering
-%\includegraphics[clip,width=\columnwidth]
-%{oscilador_relajacion.png}
-\caption{Amplificador operacional Schmitt Trigger.}
-\label{oscilador}
-\end{figure}
+
 
 Se tiene que el voltaje de la entrada no inversora del amplificador $V_1$, es: 
 \begin{align*}
