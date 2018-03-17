@@ -1,0 +1,13 @@
+T     =     0.0167 s (one period)
+f0    =    59.9520 Hz (fundamental frequency)
+Vrms  =   124.3447 V
+Irms  =     0.3916 A
+S     =    48.6915 VA
+Pavg  =    23.9965 W (directly using definition)
+P     =    23.9965 W (based on Fourier series)
+Q     =    -5.7979 VAR (based on Fourier series)
+D_fast=    41.9692 VA (distortion power, fast, easy from S^2)
+D     =    41.9644 VA (distortion power, slow, full computation)
+PF    =     0.4928 (power factor)
+THD_V =     2.2668 %
+THD_I =   164.9239 %
