@@ -69,21 +69,27 @@ I_wave = I_wave_full(1:N_onePeriod);
 
 % 5. Do some plots.
   % Plot the acquired waves, scale current (I) to milliamps
-    figure(1);
+    fig = figure(1);
     plot(t_full,[V_wave_full, 1000*I_wave_full]);
     title('Original waveforms (full length), Volts, milliAmps');
-    legend('Voltage (V)', 'Current (mA)')
+    xlabel('Times(s)');
+    ylabel('Amplitude');
+    legend('Voltage (V)', 'Current (mA)');
     grid on;
+    saveas(fig, 'original_waveform.png');
 
 
   % Plot the cropped waves, scale current (I) to milliamps
-    figure(2);
+    fig = figure(2);
     plot(t,[V_wave, 1000*I_wave]);
     title('Cropped waveforms (ONE period), Volts, milliAmps');
+    legend('Voltage (V)', 'Current (A)'); 
     grid on;
     axis('tight');
+    xlabel('Time (s)');
+    ylabel('Amplitude'); 
     axLim=axis(gca);
-   
+    saveas(fig, 'cropped_waveform.png');
 
   % Plot the magnitude of Fourier coefficients for current and voltage   
     N = 1 + length(In);
@@ -92,25 +98,32 @@ I_wave = I_wave_full(1:N_onePeriod);
     f0 = 1/T; %fundamental frequency
     fscale = (0:length(In))' * f0; %(as column vector)
     
-    figure(3);
+    fig = figure(3);
     stem(fscale,[I_DC;In]);
     title('Magnitude of Fourier coefficients for current (Amps)');
+    xlabel('Frequency (Hz)'); 
+    ylabel('Magnitude (A)');
     grid on;  
+    saveas(fig, 'current_furier_coefficients.png');
     
-    figure(4);
+    fig = figure(4);
     stem(fscale,[V_DC;Vn]);
+    xlabel('Frequency (Hz)');
+    ylabel('Magnitude (V)');
     title('Magnitude of Fourier coefficients for Voltage (Volts)');
     grid on;  
-    
+    saveas(fig, 'voltage_furier_coefficients.png'); 
 
   % Plot the reconstructed version of voltage and current
   % scale current (I) to milliamps
-    figure(5);
+    fig = figure(5);
     plot(t,[Vrec,1000*Irec]);
     axis(gca,axLim);
     title('Reconstructed versions of voltage (V) and current (mA)');
+    xlabel('Time (s)');
+    ylabel('Amplitude'); 
     grid on;
-
+    saveas(fig, 'reconstructed_voltage_current.png');
 
 % 6. Compute assuming general case
 %    S:   apparent power 
@@ -194,18 +207,19 @@ I_wave = I_wave_full(1:N_onePeriod);
      THD_I = sqrt( (I_DC^2 + sum(In(2:end).^2) ) / In(1)^2 );
      
      % printf values
-     fprintf('T     = %10.4f s (one period)\n',T);
-     fprintf('f0    = %10.4f Hz (fundamental frequency)\n',f0);
-     fprintf('Vrms  = %10.4f V\n',Vrms);
-     fprintf('Irms  = %10.4f A\n',Irms);
-     fprintf('S     = %10.4f VA\n',S);
-     fprintf('Pavg  = %10.4f W (directly using definition)\n',Pavg);
-     fprintf('P     = %10.4f W (based on Fourier series)\n',P);
-     fprintf('Q     = %10.4f VAR (based on Fourier series)\n',Q);
-     fprintf('D_fast= %10.4f VA (distortion power, fast, easy from S^2)\n',D_fast);
-     fprintf('D     = %10.4f VA (distortion power, slow, full computation)\n',D);
-     fprintf('PF    = %10.4f (power factor)\n',PF);
-     fprintf('THD_V = %10.4f %%\n',THD_V*100);
-     fprintf('THD_I = %10.4f %%\n',THD_I*100);
-
+     fileID = fopen('output.txt', 'w');
+     fprintf(fileID, 'T     = %10.4f s (one period)\n',T);
+     fprintf(fileID, 'f0    = %10.4f Hz (fundamental frequency)\n',f0);
+     fprintf(fileID, 'Vrms  = %10.4f V\n',Vrms);
+     fprintf(fileID, 'Irms  = %10.4f A\n',Irms);
+     fprintf(fileID, 'S     = %10.4f VA\n',S);
+     fprintf(fileID, 'Pavg  = %10.4f W (directly using definition)\n',Pavg);
+     fprintf(fileID, 'P     = %10.4f W (based on Fourier series)\n',P);
+     fprintf(fileID, 'Q     = %10.4f VAR (based on Fourier series)\n',Q);
+     fprintf(fileID, 'D_fast= %10.4f VA (distortion power, fast, easy from S^2)\n',D_fast);
+     fprintf(fileID, 'D     = %10.4f VA (distortion power, slow, full computation)\n',D);
+     fprintf(fileID,'PF    = %10.4f (power factor)\n',PF);
+     fprintf(fileID, 'THD_V = %10.4f %%\n',THD_V*100);
+     fprintf(fileID, 'THD_I = %10.4f %%\n',THD_I*100);
+     fclose(fileID);
  end 
