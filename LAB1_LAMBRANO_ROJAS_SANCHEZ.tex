@@ -9,7 +9,12 @@
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage{listings}
-%\renewcommand{\IEEEkeywordsname}{Palabras clave}
+\renewcommand{\IEEEkeywordsname}{Keywords}
+
+\lstset{
+basicstyle=\footnotesize,
+numbers=left
+}
 
 \begin{document}
 
@@ -37,10 +42,8 @@ the validation review with the theoretical model seen in class.
 %-----------------------------------------------------------
 
 \begin{IEEEkeywords}  
-Error estacionario, Funci\'on de transferencia, 
-Ganancia, Sistema de control  
-\end{IEEEkeywords}
 
+\end{IEEEkeywords}
 
 %-----------------------------------------------------------
 \IEEEpeerreviewmaketitle
@@ -76,6 +79,8 @@ resistive load in series with the AC controller.\\
 %--------------------------------------------------------------------
 
 \section{PROCEDURE}
+
+\subsection{Power Computations}
 
 The purpose of this practice is to measure the power consumption on 
 electrical home devices, such as a laptop, a drill and a soldering 
@@ -128,7 +133,28 @@ In the following section are the results obtained in the practice: \\
 \label{original_resistive_load}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+\includegraphics[clip,width=\columnwidth]{zoomed_current_furier_coefficients_resistive.png}
+\caption{Furier current coefficients for resistive load.}
+\label{fourier_corrent_coefficients_resistive}
+\end{figure}
 
+\begin{lstlisting}
+T     =     0.0167 s 
+f0    =    59.9520 Hz 
+Vrms  =   123.3322 V
+Irms  =     0.7860 A
+S     =    96.9336 VA
+Pavg  =    96.8309 W 
+P     =    96.8309 W 
+Q     =    -1.8282 VAR 
+D_fast=     4.0701 VA 
+D     =     4.0562 VA 
+PF    =     0.9989 
+THD_V =     1.8878 %
+THD_I =     4.0154 %
+\end{lstlisting}
 
 
 \subsubsection{Drill (inductive load)}
@@ -140,7 +166,28 @@ In the following section are the results obtained in the practice: \\
 \label{original_inductive_load}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+\includegraphics[clip,width=\columnwidth]{zoomed_current_furier_coefficients_drill.png}
+\caption{Furier current coefficients for inductive load.}
+\label{fourier_corrent_coefficients_inductive}
+\end{figure}
 
+\begin{lstlisting}
+T     =     0.0167 s 
+f0    =    59.9520 Hz 
+Vrms  =   123.8850 V
+Irms  =     0.4831 A
+S     =    59.8537 VA
+Pavg  =    30.4372 W 
+P     =    30.4372 W 
+Q     =    38.7767 VAR 
+D_fast=    33.9472 VA 
+D     =    33.9434 VA 
+PF    =     0.5085 
+THD_V =     1.8561 %
+THD_I =    69.7550 %
+\end{lstlisting}
 
 \subsubsection{Laptop (non-linear load)}
 
@@ -151,5 +198,82 @@ In the following section are the results obtained in the practice: \\
 \label{original_no_lineal_load}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+\includegraphics[clip,width=\columnwidth]{zoomed_current_furier_coefficients_computer.png}
+\caption{Furier current coefficients for non-linear load.}
+\label{fourier_corrent_coefficients_nonlinear}
+\end{figure}
+
+\begin{lstlisting}
+T     =     0.0167 s 
+f0    =    59.9520 Hz 
+Vrms  =   124.3447 V
+Irms  =     0.3916 A
+S     =    48.6915 VA
+Pavg  =    23.9965 W 
+P     =    23.9965 W 
+Q     =    -5.7979 VAR 
+D_fast=    41.9692 VA 
+D     =    41.9644 VA 
+PF    =     0.4928 
+THD_V =     2.2668 %
+THD_I =   164.9239 %
+\end{lstlisting}
+
+\subsection{AC contoller}
+
+For the second part of the practice, we have to propose a 
+circuit using thyristors to control the amount of power 
+delivered to the light bulb. The input is the 120 V AC and 
+the output is an AC waveform where there is a delay angle 
+before triggering the AC voltage. The phase control is 
+done with a potentiometer. The circuit designed is shown 
+in the Figure \ref{ACcontroller}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[clip,width=\columnwidth]{controller.png}
+\caption{AC controller circuit.}
+\label{ACcontroller}
+\end{figure}
+
+\section{CONCLUSIONS}
+
+The resistive load shows a power factor of almost 1. The inductive 
+load has a curly current shape, thanks to the type of motor being used 
+in the drill. The non-linear load shows a kinky wave shape that 
+depends on the circuit inside the electronic device.\\
+
+Power computations let us understand better the circuits, taking into 
+account the meaning behind the power factor and the different kinds of 
+power related to a circuit.\\
+
+The dimmer allows us to regulate the power taken by the light bulb. 
+Taking into account that a light bulb is resistive, the effectiveness 
+depends on the efficiency voltage and effective current. \\
+
+The circuit is controlling the AC power to the light bulb by switching 
+on and off during the positive and negative regions of the input 
+sinusoidal signal. During the negative part of the input signal, the 
+same type of response will be obtained since both the DIAC and TRIAC 
+can be triggered in the reverse direction. Varying the resistance R, 
+it is possible to control the driving angle. [3]\\
+
+About inductive and non-linear loads, you shouldn't use the dimmer 
+circuit, because both rely on the PF and the voltage and current wave 
+shape.\\
+
+As we learned in class, electronic devices, such as, DIACs and TRIACs 
+let us build circuits to control the power taken by a resistive 
+load.\\
+
+\begin{thebibliography}{1}
+
+\bibitem{IEEEhowto:kopka}
+H.~Kopka and P.~W. Daly, \emph{A Guide to {\LaTeX}}, 3rd~ed.\hskip 1em plus
+  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\end{thebibliography}
 
 \end{document}
