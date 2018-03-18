@@ -123,8 +123,8 @@ I_wave = I_wave_full(1:N_onePeriod);
     xlabel('Time (s)');
     ylabel('Amplitude');
     grid on;
-    saveas(fig, 'reconstructed_voltage_current.png');
-
+    saveas(fig, 'reconstructed_voltage_current.png');    
+    
 % 6. Compute assuming general case
 %    S:   apparent power
 %    P:   active power
