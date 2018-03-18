@@ -1,5 +1,5 @@
-TimeVolt = dlmread('F0000MTH.txt');
-TimeCurr = dlmread('F0000CH2.txt');
+TimeVolt = dlmread('F0002MTH.txt');
+TimeCurr = dlmread('F0002CH2.txt');
 
 % some Plot defaults
 set(0,'defaultlinelinewidth',2);
