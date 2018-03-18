@@ -7,8 +7,8 @@ function [] = waveform_analysis(TimeVolt, TimeCurr)
 % 4. Use function "fourier_series" to get coefficients
 % 5. Do some plots.
 % 6. Compute
-%    S:   apparent power 
-%    P:   active power 
+%    S:   apparent power
+%    P:   active power
 %    Q:   reactive power
 %    D:   volt-amp distorsion power
 %    THD: total harmonic distorsion
@@ -16,10 +16,10 @@ function [] = waveform_analysis(TimeVolt, TimeCurr)
 % Author: L.Torres 18.08.2016
 % 22.08.2016, enhanced Matlab compatibility.
 
-% 1. Import files from oscilloscope: 
+% 1. Import files from oscilloscope:
 %   - This may change for different oscilloscope models.
 %   - Here we assume that in each file there are two columns:
-%     The FIRST column is the time of each sample (horizontal axis), 
+%     The FIRST column is the time of each sample (horizontal axis),
 %     and the SECOND column is the voltage (or current, the vertical axis).
 %     Provide your file names!
 %TimeVolt = dlmread('F0000MTH.txt');
@@ -30,8 +30,8 @@ set(0,'defaultlinelinewidth',2);
 set(0,'defaultaxeslinewidth',1);
 
 % 2. Provide the number of points that make ONE period!
-%    
-%    Example: If my data was measured with 10 ms/div, and the period of 
+%
+%    Example: If my data was measured with 10 ms/div, and the period of
 %    my signals is 16.66ms, the number of points in ONE period is:
 %    250 dots / div * 16.66ms / 10ms/div =  417 dots.
 N_onePeriod = 417;
@@ -40,7 +40,7 @@ N_onePeriod = 417;
 % The steps below are automatically done. You don't need to alter these.
 
 % 3. Crop the original data to get only ONE period:
-%    I arbitrarily select the first 'N_onePeriod dots' 
+%    I arbitrarily select the first 'N_onePeriod dots'
 %    You can keep any you want!
 
 
@@ -51,7 +51,7 @@ I_wave_full = TimeCurr(:,2);
 
 % Crop to keep only ONE period
 t      =      t_full(1:N_onePeriod);
-V_wave = V_wave_full(1:N_onePeriod);  
+V_wave = V_wave_full(1:N_onePeriod);
 I_wave = I_wave_full(1:N_onePeriod);
 
 
@@ -62,8 +62,8 @@ I_wave = I_wave_full(1:N_onePeriod);
   % Note:
   % Question: Why do I need to find the Fourier series for the voltage
   %           waveform although I know it is a sinusoid?
-  % Answer: Because I need to find the angle relative to the 
-  %         period I decided to extract. 
+  % Answer: Because I need to find the angle relative to the
+  %         period I decided to extract.
 
 
 
@@ -83,36 +83,36 @@ I_wave = I_wave_full(1:N_onePeriod);
     fig = figure(2);
     plot(t,[V_wave, 1000*I_wave]);
     title('Cropped waveforms (ONE period), Volts, milliAmps');
-    legend('Voltage (V)', 'Current (A)'); 
+    legend('Voltage (V)', 'Current (mA)');
     grid on;
     axis('tight');
     xlabel('Time (s)');
-    ylabel('Amplitude'); 
+    ylabel('Amplitude');
     axLim=axis(gca);
     saveas(fig, 'cropped_waveform.png');
 
-  % Plot the magnitude of Fourier coefficients for current and voltage   
+  % Plot the magnitude of Fourier coefficients for current and voltage
     N = 1 + length(In);
     Ts = t(2)-t(1); % sampling period
-    T = Ts*N_onePeriod; %period chosen 
+    T = Ts*N_onePeriod; %period chosen
     f0 = 1/T; %fundamental frequency
     fscale = (0:length(In))' * f0; %(as column vector)
-    
+
     fig = figure(3);
     stem(fscale,[I_DC;In]);
     title('Magnitude of Fourier coefficients for current (Amps)');
-    xlabel('Frequency (Hz)'); 
+    xlabel('Frequency (Hz)');
     ylabel('Magnitude (A)');
-    grid on;  
+    grid on;
     saveas(fig, 'current_furier_coefficients.png');
-    
+
     fig = figure(4);
     stem(fscale,[V_DC;Vn]);
     xlabel('Frequency (Hz)');
     ylabel('Magnitude (V)');
     title('Magnitude of Fourier coefficients for Voltage (Volts)');
-    grid on;  
-    saveas(fig, 'voltage_furier_coefficients.png'); 
+    grid on;
+    saveas(fig, 'voltage_furier_coefficients.png');
 
   % Plot the reconstructed version of voltage and current
   % scale current (I) to milliamps
@@ -121,33 +121,33 @@ I_wave = I_wave_full(1:N_onePeriod);
     axis(gca,axLim);
     title('Reconstructed versions of voltage (V) and current (mA)');
     xlabel('Time (s)');
-    ylabel('Amplitude'); 
+    ylabel('Amplitude');
     grid on;
     saveas(fig, 'reconstructed_voltage_current.png');
 
 % 6. Compute assuming general case
-%    S:   apparent power 
-%    P:   active power 
+%    S:   apparent power
+%    P:   active power
 %    Q:   reactive power
 %    D:   volt-amp distorsion power
 %    THD: total harmonic distorsion
 
      Vrms = sqrt(mean(V_wave.^2));  % in Volts
-     Irms = sqrt(mean(I_wave.^2));  % in Amps 
-     
+     Irms = sqrt(mean(I_wave.^2));  % in Amps
+
      S = Vrms*Irms;
-     
+
      % Definition of P and Q for general case:
      %
      %    infty           infty
-     % P = Sum  Pn ,   Q = Sum  Qn 
+     % P = Sum  Pn ,   Q = Sum  Qn
      %     n=0             n=0
      %
      %  where
      %  Pn = Vn*In/2 * cos(Angle_Volt_n - Angle_Curr_n);
      %  Qn = Vn*In/2 * sin(Angle_Volt_n - Angle_Curr_n);
      %
-     %  For the case of pure sinusoidal voltage, only the 
+     %  For the case of pure sinusoidal voltage, only the
      %  powers at DC and the fundamental frequency remain:
      %  P = P0 + P1,   and  Q = Q1
 
@@ -156,22 +156,22 @@ I_wave = I_wave_full(1:N_onePeriod);
      % or equivalently,
      P_DC = V_DC*I_DC;
      Q_DC = 0;
-     
+
      % Other terms:
      Pn = Vn.*In/2 .* cos(V_PHIn - I_PHIn);
      Qn = Vn.*In/2 .* sin(V_PHIn - I_PHIn);
 
-     % Total active and reactive powers, P and Q: 
+     % Total active and reactive powers, P and Q:
      P = P0 + sum(Pn);
      Q = 0  + sum(Qn);
      %Alternatively for P you can apply the definition,
      % the mean value of the instantaneous power:
      P_wave = V_wave.*I_wave; %instantaneous
-     Pavg = mean(P_wave); 
-     
+     Pavg = mean(P_wave);
+
      % S^2 = P^2 + Q^2 + D^2
      D_fast = sqrt(S^2 - P^2 - Q^2);
-     
+
      % Long (and slow) method, in terms of components
      D2 = 0;
      D  = 0;
@@ -180,7 +180,7 @@ I_wave = I_wave_full(1:N_onePeriod);
      I_0n = [I_DC; In];
      I_PHI0n = [0; I_PHIn];
      N = length(V_0n);
-     tic();   
+     tic();
      for idxN = 1:N
        for idxM = 1:N
          if (idxN ~= idxM)
@@ -191,21 +191,21 @@ I_wave = I_wave_full(1:N_onePeriod);
      elapsed_time = toc()
      %Finally, we take square root
      D = sqrt(D2);
- 
+
 
      % Power Factor
      PF = P/S;
 
      % Definition of THD of signal y(t)
-     %            
-     %  THD^2 =  1/(Y_1)^2 * (Y_DC^2 + sum (Y_n)^2). 
+     %
+     %  THD^2 =  1/(Y_1)^2 * (Y_DC^2 + sum (Y_n)^2).
      %                                 n > 1
-     % Note: Total harmonic distortion measures how much a 
+     % Note: Total harmonic distortion measures how much a
      %       waveform differs from the sinusoid whose period
      %       corresponds to the length of the (cropped) data vector
      THD_V = sqrt( (V_DC^2 + sum(Vn(2:end).^2) ) / Vn(1)^2 );
      THD_I = sqrt( (I_DC^2 + sum(In(2:end).^2) ) / In(1)^2 );
-     
+
      % printf values
      fileID = fopen('output.txt', 'w');
      fprintf(fileID, 'T     = %10.4f s (one period)\n',T);
@@ -222,4 +222,4 @@ I_wave = I_wave_full(1:N_onePeriod);
      fprintf(fileID, 'THD_V = %10.4f %%\n',THD_V*100);
      fprintf(fileID, 'THD_I = %10.4f %%\n',THD_I*100);
      fclose(fileID);
- end 
+ end
