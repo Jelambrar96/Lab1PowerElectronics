@@ -153,7 +153,7 @@ Figure \ref{circuit_box}. \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=0.8\columnwidth]{circuit_box.png}
+\includegraphics[clip,width=\columnwidth]{circuit_box.png}
 \caption{Circuit box.}
 \label{circuit_box}
 \end{figure}
@@ -174,8 +174,7 @@ power analysis will be centered on current waveform.\\
 \subsubsection{Solderin Iron (resistive load)}
 The current waveform is a pure sine signal and it does not 
 present any distortion and between voltage and current there
-are not phase difference. This is an important feature 
-from resistive loads and it can be observed in the Figure
+are not phase difference. This can be observed in the Figure
 \ref{original_resistive_load}. 
 
 \begin{figure}[h]
@@ -198,6 +197,16 @@ consumer and it is not able to supply energy.
 \label{fourier_corrent_coefficients_resistive}
 \end{figure}
 
+Furier Transform allow to identify harmonic components of
+current signal. According to Figure
+\ref{fourier_corrent_coefficients_resistive}, current 
+waveform of a resistive load only have a 60 Hz component
+and it does not have any different harmonic component. So, 
+there are not distortion, the power factor \textit{PF} is 
+high and Total Harmonic Distortion \textit{THD} is 
+very small.
+This is an important feature from resistive loads.  
+
 \begin{lstlisting}[caption = Output for resistive load.]
 T     =     0.0167 s 
 f0    =    59.9520 Hz 
@@ -214,8 +223,19 @@ THD_V =     1.8878 %
 THD_I =     4.0154 %
 \end{lstlisting}
 
-
-\subsubsection{Drill (inductive load)}
+\subsubsection{Drill (inductive load)} The current 
+behaviour for inductive loads is different to resistive 
+loads. Current waveform is not a pure sine signal, 
+because there are harmonic components that change shape 
+current signal. This can be observed in the Figure 
+\ref{original_inductive_load} and 
+\ref{fourier_corrent_coefficients_inductive}. 
+The waveform present peaks as a result of 
+current harmonic component: $3 f_0$, $5 f_0$, $7 f_0$ 
+and $9 f_0$,  where $f_0$ is fundamental frquency (60 Hz). 
+In addition, there are an 
+phase difference betweent both signal: current signal is
+slow respect to voltage signal.
 
 \begin{figure}[h]
 \centering
@@ -225,6 +245,13 @@ THD_I =     4.0154 %
 \label{original_inductive_load}
 \end{figure}
 
+In contrast to resistive load, the power factor value is 
+very low and reactive power $Q$ and $THD_I$ are very high.
+According to Listing \ref{output_inductive},
+for this device, Reactive Power $Q$ is higher that Active 
+Power $P$. 
+This high $Q$ value mean that drill is a reactive element. 
+
 \begin{figure}[h]
 \centering
 \includegraphics[clip,width=\columnwidth]
@@ -233,7 +260,8 @@ THD_I =     4.0154 %
 \label{fourier_corrent_coefficients_inductive}
 \end{figure}
 
-\begin{lstlisting} [caption = Output for inductive load.]
+\begin{lstlisting} [caption = {Output for inductive load.}
+\label{output_inductive}]
 T     =     0.0167 s 
 f0    =    59.9520 Hz 
 Vrms  =   123.8850 V
@@ -249,7 +277,13 @@ THD_V =     1.8561 %
 THD_I =    69.7550 %
 \end{lstlisting}
 
-\subsubsection{Laptop (non-linear load)}
+\subsubsection{Laptop (non-linear load)} Finally, 
+according to Figure \ref{original_no_lineal_load},  
+current signal of non-linear load do not present any 
+sine shape. The current waveform present peaks more 
+narrow that inductive peaks loads. Those peaks 
+presents a high harmonic components of current signal. 
+
 
 \begin{figure}[h]
 \centering
@@ -285,13 +319,23 @@ THD_I =   164.9239 %
 
 \subsection{AC contoller}
 
-For the second part of the practice, we have to propose a 
-circuit using thyristors to control the amount of power 
-delivered to the light bulb. The input is the 120 V AC and 
+For the second part of the practice, a 
+circuit using thyristors  was desinged to control 
+the amount of power delivered to the light bulb. 
+The input is the 120 V AC and 
 the output is an AC waveform where there is a delay angle 
 before triggering the AC voltage. The phase control is 
 done with a potentiometer. The circuit designed is shown 
 in the Figure \ref{ACcontroller}.
+
+\begin{table}
+\caption{Power measures from diferents controller values}
+%elemento p q d fp th1
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline 
+Device & Active Power & Reactive Power & Harmonic Power & Aparent Power & Power Factor & THD \\ \hline
+\end{tabular}
+\end{table}
 
 \begin{figure}[h]
 \centering
@@ -308,12 +352,12 @@ the type of motor being used in the drill. The
 non-linear load shows a kinky wave shape that 
 depends on the circuit inside the electronic device.\\
 
-Power computations let us understand better the 
+Power computations let understand better the 
 circuits, taking into account the meaning behind the 
 power factor and the different kinds of 
 power related to a circuit.\\
 
-The dimmer allows us to regulate the power taken by the 
+The dimmer allows to regulate the power taken by the 
 light bulb. Taking into account that a light bulb is 
 resistive, the effectiveness depends on the efficiency 
 voltage and effective current. \\
@@ -331,7 +375,7 @@ About inductive and non-linear loads, you shouldn't use
 the dimmer circuit, because both rely on the PF and the
 voltage and current wave shape.\\
 
-As we learned in class, electronic devices, such as,
+Electronic devices, such as,
 DIACs and TRIACs let us build circuits to control the 
 power taken by a resistive load.\\
 
