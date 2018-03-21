@@ -137,7 +137,7 @@ load and wires of high currents.\\
 \hline 
 Device & Power (W) & Voltage (V\textsubscript{rms}) 
 & Current (A\textsubscript{rms}) \\ \hline 
-Solderin Iron 	&  40	& 120 	& 0.33 \\ \hline 
+Soldering Iron 	&  40	& 120 	& 0.33 \\ \hline 
 Drill 		& 130	& 120   & 1.08 \\ \hline 
 Laptop 		& 140 	& 120   & 1.16 \\ \hline 
 Light Bulb		& 70  	& 120   & 0.58 \\ \hline 
@@ -193,11 +193,11 @@ consumer and it is not able to supply energy.
 \centering
 \includegraphics[clip,width=\columnwidth]
 {zoomed_current_furier_coefficients_resistive.png}
-\caption{Furier current coefficients for resistive load.}
+\caption{Fourier current coefficients for resistive load.}
 \label{fourier_corrent_coefficients_resistive}
 \end{figure}
 
-Furier Transform allow to identify harmonic components of
+Fourier Transform allow to identify harmonic components of
 current signal. According to Figure
 \ref{fourier_corrent_coefficients_resistive}, current 
 waveform of a resistive load only have a 60 Hz component
@@ -256,7 +256,7 @@ This high $Q$ value mean that drill is a reactive element.
 \centering
 \includegraphics[clip,width=\columnwidth]
 {zoomed_current_furier_coefficients_drill.png}
-\caption{Furier current coefficients for inductive load.}
+\caption{Fourier current coefficients for inductive load.}
 \label{fourier_corrent_coefficients_inductive}
 \end{figure}
 
@@ -282,8 +282,10 @@ according to Figure \ref{original_no_lineal_load},
 current signal of non-linear load do not present any 
 sine shape. The current waveform present peaks more 
 narrow that inductive peaks loads. Those peaks 
-presents a high harmonic components of current signal. 
-
+presents a high harmonic components which can be observed 
+in the Figure \ref{fourier_corrent_coefficients_nonlinear}. 
+The harmonic components of non-linear load are much higher 
+than harmonic components of inductive load. 
 
 \begin{figure}[h]
 \centering
@@ -297,9 +299,17 @@ presents a high harmonic components of current signal.
 \centering
 \includegraphics[clip,width=\columnwidth]
 {zoomed_current_furier_coefficients_computer.png}
-\caption{Furier current coefficients for non-linear load.}
+\caption{Fourier current coefficients for non-linear load.}
 \label{fourier_corrent_coefficients_nonlinear}
 \end{figure}
+
+Nevertheless, a laptop does not have reactives elements 
+like elctrical coils, the power factor values is very 
+low. The electronics circuits inside a laptop (or other 
+complex electronic device) do not respond linear way. 
+For this reason, current waveform presents a lot of 
+distortion, as a result, Harmonic Power $D$ and $THD_I$ 
+value are very high while $PF$ is small. 
 
 \begin{lstlisting} [caption = Output for non-linear load.]
 T     =     0.0167 s 
@@ -328,21 +338,33 @@ before triggering the AC voltage. The phase control is
 done with a potentiometer. The circuit designed is shown 
 in the Figure \ref{ACcontroller}.
 
-\begin{table}
-\caption{Power measures from diferents controller values}
-%elemento p q d fp th1
-\begin{tabular}{|l|c|c|c|c|c|c|}
-\hline 
-Device & Active Power & Reactive Power & Harmonic Power & Aparent Power & Power Factor & THD \\ \hline
-\end{tabular}
-\end{table}
-
 \begin{figure}[h]
 \centering
 \includegraphics[clip,width=\columnwidth]{controller.png}
 \caption{AC controller circuit.}
 \label{ACcontroller}
 \end{figure}
+
+\begin{table}
+\caption{Power measures from diferents controller values}
+\begin{tabular}{|p{1.2cm}|c|c|c|c|c|c|}
+\hline 
+ & P  & Q  & D  & S  & PF & THDI  \\
+ &(W) & (VAR) &(VA) & (VA) &  & (\%) \\ \hline  
+NoCtrl & 77.24 & -3 & 3 & 77.36 & 0.999 & 4.01 \\ 
+\hline 
+Pos 0 & 74.2 & 0.1 & 5.1 & 74.37 & 0.998 & 6.23 \\ 
+\hline 
+Pos 1 & 69.8 & 10.5 & 17.29 & 72.68 & 0.96 & 23.99 \\
+\hline 
+Pos 2 & 53.64 & 23.48 & 31.41 & 66.45 & 0.807 & 53.48 \\
+\hline 
+Pos 3 & 40.19 & 27.81 & 35.69 & 60.51 & 0.664 & 73.58 \\ 
+\hline
+Pos 4 & 30.47 & 28.41 & 37.36 & 55.96 & 0.545 & 89.63 \\ 
+\hline 
+\end{tabular}
+\end{table}
 
 \section{CONCLUSIONS}
 
