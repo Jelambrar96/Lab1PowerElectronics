@@ -14,6 +14,8 @@
 \usepackage[font=scriptsize,labelfont=bf]{caption}
 \renewcommand{\IEEEkeywordsname}{Palabras clave}
 %\renewcommand{\table}{TABLA}
+\renewcommand\spanishtablename{Tabla}
+\renewcommand\lstlistingname{Salida}
 
 \bgroup
 \def\arraystretch{1.5}
@@ -27,7 +29,7 @@ basicstyle=\footnotesize
 
 \begin{document}
 
-\title{\textbf{Lab1: Power in home appliances}}
+\title{\textbf{Laboratorio 1: Potencia \\ en aplicaciones domésticas}}
 \author{
   \IEEEauthorblockN{ Jorge Lambra\~no$^3$, Julian Rojas$^2$, 
   Juan Sánchez$^3$\vspace{0.2cm}}\\
@@ -52,7 +54,8 @@ review with the theoretical model seen in class.
 %-----------------------------------------------------------
 
 \begin{IEEEkeywords}  
-Current, Power, Power Factor, Voltage, Waveform.
+%Current, Power, Power Factor, Voltage, Waveform.
+Armónico, Corriente, Distorsión, Factor de Potencia,  Potencia, Tensión, Transformada de Fourier, Voltaje. 
 \end{IEEEkeywords}
 
 %-----------------------------------------------------------
@@ -127,28 +130,30 @@ diseño del circuito se encuentra ilustrado en la Figura
 
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=0.75\columnwidth]{circuit_diagram.png}
+\includegraphics[clip,width=0.9\columnwidth]{circuit_diagram.png}
 \caption{Circuito utilizado para la obtención \\
-de los valores de potencia y tensión.}
+de los valores de corriente y tensión.}
 \label{circuit_diagram}
 \end{figure}
 
-\textit{CH1} y
-\textit{CH2} representan los canales del osciloscopio,
-\textit{Phase} corresponde a la fase y \textit{N} corresponde
-al neutro. \textit{V\textsubscript{ac}} representa 
-la onda de 120 
-V\textsubscript{rms} que entrega la red eléctrica. 
+\textit{CH1} y \textit{CH2} representan los puntos donde
+se toman el osciloscopio toma las medidas a través de las 
+sondas de los canales 1 y 2 del osciloscopio,
+\textit{Phase} y \textit{N} corresponden a la fase y 
+al neutro de la red a la que se conecta el circuito. 
+\textit{V\textsubscript{ac}} representa 
+la onda de 120V\textsubscript{rms} 
+que entrega la red eléctrica. 
 \textit{Fuse} representa un fusible cuyo valor se explicará 
 más adelante, \textit{Rshunt} representa una resistencia 
 de potencia de 1 $\Omega$ y 10 W. \textit{LOAD} corresponde
-al dispositivo al que vamos al que se va a realizar la
+al dispositivo al que se va a realizar la
 medición.\\ 
 
 Se puede observar del
 gráfico que el valor de tensión que cae en el dispositivo
 es la diferencia de los datos que se obtienen en los canales 
-del osciloscopio. $V_D = CH1 - CH2$. Y la corriente que 
+del osciloscopio. $V_L = CH1 - CH2$. Y la corriente que 
 pasa a través del dispositivo es la razón entre la tensión 
 que se obtiene en el canal \textit{CH2} y el valor de la 
 resistencia. Esto es el valor del canal, puesto que 
@@ -173,16 +178,8 @@ adelante.\\
 %In addition to this, the circuit uses a 3A fuse to protect
 %load and wires of high currents.\\
 
-Con respecto al calibre del alambre, fue seleccionado 
-dependiendo de la máxima corriente que necesita cada 
-dispoitivo, de acuerdo con los parámetros eléctricos 
-que se muestran en la descripción del dispositivo. Estos
-valores de corriente son mostrados en la Tabla
-\ref{current_table}. \\
-
-\begin{table}
+\begin{table}[h]
 \centering
-\caption{Power and current values of each device.}
 \begin{tabular}{|l|p{1.2cm}|p{1.5cm}|p{1.5cm}|}
 \hline 
 Dispositivo & Potencia (W) & Tensión (V\textsubscript{rms}) 
@@ -193,52 +190,101 @@ Portátil 		& 140 	& 120   & 1.16 \\ \hline
 Bombillo		& 70  	& 120   & 0.58 \\ \hline 
 Resistencia & 10 & - & 3.17 \\ \hline
 \end{tabular}
+\caption{Power and current values of each device.}
 \label{current_table}
 \end{table}
 
-The circuit is inside a 4x4 box with a fuse holder to 
-change the breaker, 4 measuring terminals; the white 
-one for neutral, green one for ground and 
-both black one for phase. The box is shown in the 
-Figure \ref{circuit_box}. \\
+Con respecto al calibre del alambre, fue seleccionado 
+dependiendo de la máxima corriente que necesita cada 
+dispoitivo, de acuerdo con los parámetros eléctricos 
+que se muestran en la descripción del dispositivo. Estos
+valores de corriente son mostrados en la Tabla
+\ref{current_table}. Basándose en la 
+Tabla \ref{current_table} se seleccionó un alambre 
+AWG 14 capaz de soportar una corriente máxma de 
+15A\textsubscript{rms}, puesto que es que utiliza 
+normalmente en instalaciones eléctricas domésticas. 
+La corriente máxima que sorporta el fusible es 
+3A\textsubscript{rms}, se escogió este valor basándose
+en la máxima corriente que es capaz de soportar la 
+resistencia. \\
+
+El circuito se introdujo dentro de una caja 4x4, el 
+fusible se ubicó de tal forma que no fuese necesario 
+abrir la caja en caso que fuera necesario reemplazarlo. 
+Además se colocaron 
+cuatro borneras para poder medir de forma más segura 
+usando las sondas del osciloscopio. \\
+
+%The circuit is inside a 4x4 box with a fuse holder to 
+%change the breaker, 4 measuring terminals; the white 
+%one for neutral, green one for ground and 
+%both black one for phase. The box is shown in the 
+%Figure \ref{circuit_box}. \\
 
 \begin{figure}[h]
 \centering
 \includegraphics[clip,width=\columnwidth]{circuit_box.png}
-\caption{Circuit box.}
+\caption{Imagen del montaje del circuito.}
 \label{circuit_box}
 \end{figure}
 
-For this practice three different loads are chosen to 
-analize their voltage and current waveform: 
-a soldering iron 
-like resistive load, a drill like inductive load and 
-a laptop like non-linear load. These loads are conected 
-to an electrical outlet, using the power meter. Owing to 
-high electrical network inertia, the voltage waveform do
-not depend on the load. For this reason, the voltage signal
-is similar in all measurings. However, current waveform 
-depend on impedance load and voltage, and the first 
-parameter is realted to load features. Therefore, the 
-power analysis will be centered on current waveform.\\
+En esta práctica se utilizaron tres cargas diferentes 
+para analizar las formas de onda de corriente y tensión: 
+Un \textit{cautin} como ejemplo de una carga puramente 
+resistiva, un \textit{taladro} como carga inductiva y un 
+\textit{computador portátil} como carga no lineal. 
+Gracias a la inercia de la red eléctrica, la onda de 
+tensión no depende de la carga, esto hace que la medida de 
+la tensión sea similar para todas las cargas. Sin embargo, 
+la onda de corriente depende de la impedancia de la carga. 
+Por esta razón, el analisis de potencia se centrará 
+en la forma de onda de la corriente.  \\
 
-\subsubsection{Solderin Iron (resistive load)}
-The current waveform is a pure sine signal and it does not 
-present any distortion and between voltage and current there
-are not phase difference. This can be observed in the Figure
-\ref{original_resistive_load}. 
+%For this practice three different loads are chosen to 
+%analize their voltage and current waveform: 
+%a soldering iron 
+%like resistive load, a drill like inductive load and 
+%a laptop like non-linear load. These loads are conected 
+%to an electrical outlet, using the power meter. Owing to 
+%high electrical network inertia, the voltage waveform do
+%not depend on the load. For this reason, the voltage signal
+%is similar in all measurings. However, current waveform 
+%depend on impedance load and voltage, and the first 
+%parameter is realted to load features. Therefore, the 
+%power analysis will be centered on current waveform.\\
+
+%\subsubsection{Solderin Iron (resistive load)}
+%The current waveform is a pure sine signal and it does not 
+%present any distortion and between voltage and current there
+%are not phase difference. This can be observed in the Figure
+%\ref{original_resistive_load}. 
 
 \begin{figure}[h]
 \centering
 \includegraphics[clip,width=\columnwidth]{original_waveform_cautin.png}
-\caption{Voltage and current waveforms of a resistive load.}
+\caption{Ondas de tensión y corriente para una carga
+resistiva.}
 \label{original_resistive_load}
 \end{figure}
 
-Additionally, in a resistive load, product between 
-current and voltage always 
-is positive, this means that soldering iron is a power 
-consumer and it is not able to supply energy. 
+\subsubsection{Cautin (carga resistiva)}
+La onda de corriente para esta carga fue una señal 
+sinusoidal que no presentaba ninguna distorsión y además 
+se encontraba en fase con la onda de voltaje. Las imágenes
+de las formas de onda que se obtivieron en el osciloscopio 
+se obseervan en la Figura \ref{original_resistive_load}. \\
+
+%Additionally, in a resistive load, product between 
+%current and voltage always 
+%is positive, this means that soldering iron is a power 
+%consumer and it is not able to supply energy. 
+
+Adicionalmente, en una carga resistiva, el producto de la 
+onda de corriente y tensión siempre es positivo, esto 
+significa que un cautin funciona siempre como un 
+consumidor de potencia ya que por su naturaleza no es 
+capaz de entregar energía. \\
 
 \begin{figure}[h]
 \centering
@@ -248,17 +294,34 @@ consumer and it is not able to supply energy.
 \label{fourier_corrent_coefficients_resistive}
 \end{figure}
 
-Fourier Transform allow to identify harmonic components of
-current signal. According to Figure
-\ref{fourier_corrent_coefficients_resistive}, current 
-waveform of a resistive load only have a 60 Hz component
-and it does not have any different harmonic component. So, 
-there are not distortion, the power factor \textit{PF} is 
-high and Total Harmonic Distortion \textit{THD} is 
-very small.
-This is an important feature from resistive loads.  
+La Transformada de Fourier permite identificar las 
+componentes armónicas de la señal de corriente. 
+De acuerdo con la Figura 
+\ref{fourier_corrent_coefficients_resistive}, la onda 
+de corriente solamente tiene la componente de la frecuencia 
+fundamental (60Hz), las demás son despresiables. 
+Por tanto, no hay distorsión, el factor de potencia 
+\textit{PF} es casi unitario, mientras que la Distorsión 
+Total Armónica de Corriente 
+\textit{THD\textsubscript{I}} es muy pequeña. Esto lo 
+confirma la Salida 1, en donde el Factor de Potencia es 
+0.9989, la potencia activa \textit{P} es muy alta en 
+comparación a la potencia reactiva \textit{Q} y a la 
+potenicia de distorsión \textit{D} 
+y la Distorsión Armónica de Corriente 
+\textit{THD\textsubscript{I}} es menor a 5\%. 
 
-\begin{lstlisting}[caption = Output for resistive load.]
+%Fourier Transform allow to identify harmonic components of
+%current signal. According to Figure
+%\ref{fourier_corrent_coefficients_resistive}, current 
+%waveform of a resistive load only have a 60 Hz component
+%and it does not have any different harmonic component. So, 
+%there are not distortion, the power factor \textit{PF} is 
+%high and Total Harmonic Distortion \textit{THD} is 
+%very small.
+%This is an important feature from resistive loads.  
+
+\begin{lstlisting}[caption = Carga resistiva.]
 T     =     0.0167 s 
 f0    =    59.9520 Hz 
 Vrms  =   123.3322 V
@@ -274,19 +337,21 @@ THD_V =     1.8878 %
 THD_I =     4.0154 %
 \end{lstlisting}
 
-\subsubsection{Drill (inductive load)} The current 
-behaviour for inductive loads is different to resistive 
-loads. Current waveform is not a pure sine signal, 
-because there are harmonic components that change shape 
-current signal. This can be observed in the Figure 
-\ref{original_inductive_load} and 
-\ref{fourier_corrent_coefficients_inductive}. 
-The waveform present peaks as a result of 
-current harmonic component: $3 f_0$, $5 f_0$, $7 f_0$ 
-and $9 f_0$,  where $f_0$ is fundamental frquency (60 Hz). 
-In addition, there are an 
-phase difference betweent both signal: current signal is
-slow respect to voltage signal.
+\subsubsection{Taladro (carga inductiva)}
+
+%\subsubsection{Drill (inductive load)} The current 
+%behaviour for inductive loads is different to resistive 
+%loads. Current waveform is not a pure sine signal, 
+%because there are harmonic components that change shape 
+%current signal. This can be observed in the Figure 
+%\ref{original_inductive_load} and 
+%\ref{fourier_corrent_coefficients_inductive}. 
+%The waveform present peaks as a result of 
+%current harmonic component: $3 f_0$, $5 f_0$, $7 f_0$ 
+%and $9 f_0$,  where $f_0$ is fundamental frquency (60 Hz). 
+%In addition, there are an 
+%phase difference betweent both signal: current signal is
+%slow respect to voltage signal.
 
 \begin{figure}[h]
 \centering
@@ -296,12 +361,12 @@ slow respect to voltage signal.
 \label{original_inductive_load}
 \end{figure}
 
-In contrast to resistive load, the power factor value is 
-very low and reactive power $Q$ and $THD_I$ are very high.
-According to Listing \ref{output_inductive},
-for this device, Reactive Power $Q$ is higher that Active 
-Power $P$. 
-This high $Q$ value mean that drill is a reactive element. 
+%In contrast to resistive load, the power factor value is 
+%very low and reactive power $Q$ and $THD_I$ are very high.
+%According to Listing \ref{output_inductive},
+%for this device, Reactive Power $Q$ is higher that Active 
+%Power $P$. 
+%This high $Q$ value mean that drill is a reactive element. 
 
 \begin{figure}[h]
 \centering
@@ -328,15 +393,15 @@ THD_V =     1.8561 %
 THD_I =    69.7550 %
 \end{lstlisting}
 
-\subsubsection{Laptop (non-linear load)} Finally, 
-according to Figure \ref{original_no_lineal_load},  
-current signal of non-linear load do not present any 
-sine shape. The current waveform present peaks more 
-narrow that inductive peaks loads. Those peaks 
-presents a high harmonic components which can be observed 
-in the Figure \ref{fourier_corrent_coefficients_nonlinear}. 
-The harmonic components of non-linear load are much higher 
-than harmonic components of inductive load. 
+%\subsubsection{Laptop (non-linear load)} Finally, 
+%according to Figure \ref{original_no_lineal_load},  
+%current signal of non-linear load do not present any 
+%sine shape. The current waveform present peaks more 
+%narrow that inductive peaks loads. Those peaks 
+%presents a high harmonic components which can be observed 
+%in the Figure \ref{fourier_corrent_coefficients_nonlinear}. 
+%The harmonic components of non-linear load are much higher 
+%than harmonic components of inductive load. 
 
 \begin{figure}[h]
 \centering
@@ -354,13 +419,13 @@ than harmonic components of inductive load.
 \label{fourier_corrent_coefficients_nonlinear}
 \end{figure}
 
-Nevertheless, a laptop does not have reactives elements 
-like elctrical coils, the power factor values is very 
-low. The electronics circuits inside a laptop (or other 
-complex electronic device) do not respond linear way. 
-For this reason, current waveform presents a lot of 
-distortion, as a result, Harmonic Power $D$ and $THD_I$ 
-value are very high while $PF$ is small. 
+%Nevertheless, a laptop does not have reactives elements 
+%like elctrical coils, the power factor values is very 
+%low. The electronics circuits inside a laptop (or other 
+%complex electronic device) do not respond linear way. 
+%For this reason, current waveform presents a lot of 
+%distortion, as a result, Harmonic Power $D$ and $THD_I$ 
+%value are very high while $PF$ is small. 
 
 \begin{lstlisting} [caption = Output for non-linear load.]
 T     =     0.0167 s 
@@ -378,16 +443,17 @@ THD_V =     2.2668 %
 THD_I =   164.9239 %
 \end{lstlisting}
 
-\subsection{AC contoller}
+\subsection{Controlador AC}
 
-For the second part of the practice, a 
-circuit using thyristors  was desinged to control 
-the amount of power delivered to the light bulb. 
-The input is the 120 V AC and 
-the output is an AC waveform where there is a delay angle 
-before triggering the AC voltage. The phase control is 
-done with a potentiometer. The circuit designed is shown 
-in the Figure \ref{ACcontroller}.
+
+%For the second part of the practice, a 
+%circuit using thyristors  was desinged to control 
+%the amount of power delivered to the light bulb. 
+%The input is the 120 V AC and 
+%the output is an AC waveform where there is a delay angle 
+%before triggering the AC voltage. The phase control is 
+%done with a potentiometer. The circuit designed is shown 
+%in the Figure \ref{ACcontroller}.
 
 \begin{figure}[h]
 \centering
@@ -396,8 +462,22 @@ in the Figure \ref{ACcontroller}.
 \label{ACcontroller}
 \end{figure}
 
-\begin{table}
-\caption{Power measures from diferents controller values}
+Cuando el voltaje a través del capacitor alcanza el 
+voltaje de ruptura del DIAC, éste se encuentra 
+parcialmente descargado por el DIAC a través de la 
+compuerta del QUADRAC. En ese momento el QUADRAC 
+entra en modo conducción en el ciclo de media onda. 
+En este circuito el QUADRAC se encuentra en los 
+cuadrantes I y III. La simplicidad de este circuito 
+hace que sea accesible para aplicaciones con pequeño 
+control de rango. Los circuitos dimmer se basan en el 
+control de potencia que se logra variando el ángulo de 
+conducción del QUADRAC, de 30$^{circle}$ a 160$^{circle}$ 
+cuando fluye la 
+corriente por un potenciómetro que tiene la función de 
+controlarla. \\
+
+\begin{table}[h]
 \begin{tabular}{|p{1.2cm}|c|c|c|c|c|c|}
 \hline 
  & P  & Q  & D  & S  & PF & THDI  \\
@@ -415,6 +495,7 @@ Pos 3 & 40.19 & 27.81 & 35.69 & 60.51 & 0.664 & 73.58 \\
 Pos 4 & 30.47 & 28.41 & 37.36 & 55.96 & 0.545 & 89.63 \\ 
 \hline 
 \end{tabular}
+\caption{Power measures from diferents controller values}
 \end{table}
 
 \section{CONCLUSIONES}
