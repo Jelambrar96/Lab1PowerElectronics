@@ -9,6 +9,7 @@
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage{listings}
+\usepackage{hyperref}
 %\usepackage{caption}
 \usepackage[justification=centering]{caption}
 \usepackage[font=scriptsize,labelfont=bf]{caption}
@@ -19,6 +20,13 @@
 
 \bgroup
 \def\arraystretch{1.5}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
 
 
 \lstset{
@@ -116,7 +124,7 @@ obtener los valores de tensión, corriente y corriente se
 diseñó un circuito que junto con el osciloscopio, es capaz de
 permite la obtención de valores de tensión y corriente. El 
 diseño del circuito se encuentra ilustrado en la Figura 
-\ref{circuit_diagram}.
+\ref{circuit_diagram}. \\
 
 %The purpose of this practice is to measure the 
 %power consumption on electrical home devices, such 
@@ -239,7 +247,13 @@ tensión no depende de la carga, esto hace que la medida de
 la tensión sea similar para todas las cargas. Sin embargo, 
 la onda de corriente depende de la impedancia de la carga. 
 Por esta razón, el analisis de potencia se centrará 
-en la forma de onda de la corriente.  \\
+en la forma de onda de la corriente, y se espera que 
+la distorsión en la onda de tensión sea mínima. En otras 
+palabras, mientras el valor de la Distorsión Total Armónica
+de Tensión \textit{THD\textsubscript{V}} se mantenga más o
+menos constante, el valor de la Distorsión Total Armónica
+de Corriente \textit{THD\textsubscript{I}} varíe segun 
+la carga que se esté midiendo.  \\
 
 %For this practice three different loads are chosen to 
 %analize their voltage and current waveform: 
@@ -309,7 +323,7 @@ confirma la Salida 1, en donde el Factor de Potencia es
 comparación a la potencia reactiva \textit{Q} y a la 
 potenicia de distorsión \textit{D} 
 y la Distorsión Armónica de Corriente 
-\textit{THD\textsubscript{I}} es menor a 5\%. 
+\textit{THD\textsubscript{I}} es 4\%. 
 
 %Fourier Transform allow to identify harmonic components of
 %current signal. According to Figure
@@ -339,6 +353,42 @@ THD_I =     4.0154 %
 
 \subsubsection{Taladro (carga inductiva)}
 
+\begin{figure}[h]
+\centering
+\includegraphics[clip,width=\columnwidth]
+{original_waveform_drill.png}
+\caption{Voltage and current waveforms of a inductive load.}
+\label{original_inductive_load}
+\end{figure}
+
+El comportamiento de la corriente en una carga inductiva 
+es diferente al ocmportamiento en una carga resistiva. 
+La forma de la corriente no es una puramente sinusoidal,
+aparecen compoenentes armónicas que distorsionan la forma 
+de la señal. La forma de onda de la corriente
+se puede observar en la Figura 
+\ref{original_inductive_load}.\\ 
+
+\begin{figure}[h]
+\centering
+\includegraphics[clip,width=\columnwidth]
+{zoomed_current_furier_coefficients_drill.png}
+\caption{Fourier current coefficients for inductive load.}
+\label{fourier_corrent_coefficients_inductive}
+\end{figure}
+
+La presencia de las componentes armónicas se observa 
+con mayor claridad gracias a la Transformada de Fourier, 
+esta transformada aparece en la Figura 
+\ref{fourier_corrent_coefficients_inductive}.
+La Transformada de Fourier de la señal de corriente 
+presenta fuertes componentes armónicas en las frecuencias
+$3 f_0$, $5 f_0$, $7 f_0$  y $9 f_0$, donde $f_0$ es la 
+frecuencia fundamental (60Hz). Además de las componentes 
+armónicas existe un desfase entre la onda de corriente 
+y tensión. Este desfase es una característica importante 
+de las cargas inductivas. \\
+
 %\subsubsection{Drill (inductive load)} The current 
 %behaviour for inductive loads is different to resistive 
 %loads. Current waveform is not a pure sine signal, 
@@ -353,13 +403,24 @@ THD_I =     4.0154 %
 %phase difference betweent both signal: current signal is
 %slow respect to voltage signal.
 
-\begin{figure}[h]
-\centering
-\includegraphics[clip,width=\columnwidth]
-{original_waveform_drill.png}
-\caption{Voltage and current waveforms of a inductive load.}
-\label{original_inductive_load}
-\end{figure}
+A diferencia de una carga resistiva, el valor de la 
+Potencia Reactiva $Q$ y de la Distorsión Total Armónica 
+de Corriente es mucho más alto. Tanto así que hacen 
+que el valor del Factor de Potencia $pf$ sea muy bajo, 
+aproximadamente 0.51. Los motores y otras cargas 
+inductivas, por lo general tienen un factor de potencia 
+más alto (entre 0.75 y 0.9), una causa por la cual el 
+factor de potencia durante la medición fue mucho más 
+bajo que estos valores es la presencia de un circuito 
+eléctrico que regula la velocidad y el torque del 
+motor del taladro. Este circuito electrónico para 
+valores bajos de velocidad, genera distorsión en la 
+señal de corriente la cual tiene el efecto de  
+aumentar el \textit{THD\textsubscript{I}}, la Potencia 
+de Distorsión $D$ y por tanto, reducir el Factor de 
+Potencia. En la segunda parte de este informe se analizará
+más detallamente el efecto de circuitos eléctronicos 
+controladores de potencia. 
 
 %In contrast to resistive load, the power factor value is 
 %very low and reactive power $Q$ and $THD_I$ are very high.
@@ -368,13 +429,7 @@ THD_I =     4.0154 %
 %Power $P$. 
 %This high $Q$ value mean that drill is a reactive element. 
 
-\begin{figure}[h]
-\centering
-\includegraphics[clip,width=\columnwidth]
-{zoomed_current_furier_coefficients_drill.png}
-\caption{Fourier current coefficients for inductive load.}
-\label{fourier_corrent_coefficients_inductive}
-\end{figure}
+
 
 \begin{lstlisting} [caption = {Output for inductive load.}
 \label{output_inductive}]
