@@ -77,7 +77,7 @@ El objetivo principal de esta práctica es realizar
 un análisis de la forma de onda y las mediciones 
 de tres tipos diferentes de carga. Dentro de la caja 
 de seguridad hay un fusible para proteger el equipo 
-de cualquier corto circuito. Usamos una resistencia 
+de cualquier corto circuito. Se usó resistencia 
 de 1 $\Omega$ y 10 W para medir la corriente dividiendo 
 la tensión entre 1 para obtener el valor actual. 
 Todos los dispositivos electrónicos están compuestos 
@@ -85,7 +85,7 @@ de resistencias, condensadores e inductancias, un
 soldador es una carga lineal resistiva, requieren calor 
 para funcionar. El voltaje medido sería el mismo que 
 el de la fuente, pero la corriente variará según el 
-consumo de energía del dispositivo. Esperamos la misma 
+consumo de energía del dispositivo. Se espera la misma 
 forma de onda para el voltaje y la corriente y ningún 
 cambio de fase entre ellos.\\
 
@@ -571,6 +571,16 @@ cuando fluye la
 corriente por un potenciómetro que tiene la función de 
 controlarla. \\
 
+Se realizaron las mismas mediciones con el controlador AC 
+que se utilizaron anteriormente. Se comparó los valores de
+Factor de Potencia, Potencia Activa, Potencia de Distorsión
+y Distorsión Armónica, para el caso donde no hay controlador, 
+y para diferentes valores de resistencia (posiciones del 
+potenciómetro). Los resultados 
+de esas comparaciones se observan en la Tabla 
+\ref{table:controller}. \\
+
+
 \begin{table}[h]
 \begin{tabular}{|p{1.2cm}|c|c|c|c|c|c|}
 \hline 
@@ -591,7 +601,16 @@ Pos 4 & 30.47 & 28.41 & 37.36 & 55.96 & 0.545 & 89.63 \\
 \end{tabular}
 \caption{Mediciones de potencia para diferentes \\ valores 
 del Potenciómetro.}
+\label{table:controller}
 \end{table}
+
+Básandose en la información se pudo observar que el 
+controlador permite variar la potencia activa que 
+consume el dispositivo, es decir, reduce o aumente 
+el brillo de la lámpara. Sin embargo a medida que se 
+reduce el brillo del bombillo aumenta la Potencia de 
+Distorsión $D$, la Distorsión en la Corriente y se 
+reduce el Factor de Potencia. 
 
 \section{CONCLUSIONES}
 
