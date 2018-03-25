@@ -53,11 +53,14 @@ for Journals}
 	
 \maketitle
 
-\begin{abstract}
-This report presents the design and implementation 
-of a security box and a dimmer circuit using DIACs 
-and TRIACs. The reader also can find  the validation 
-review with the theoretical model seen in class.    
+\begin{abstract}  
+En el presente informe se exponen los resultados de las
+mediciones de potencia, tensión y corriente de diferentes
+dispositivos, asimismo se encuentra el diseño de un 
+circuito que permite controlar la potencia de una 
+carga resistiva, utilizando DIACs y TRIACs. El lector 
+podrá encontrar una validación a los modelos teóricos 
+de la electrónica de potencia. 
 \end{abstract}
 
 %-----------------------------------------------------------
@@ -95,7 +98,7 @@ bobinas. Debería haber un cambio de fase entre el
 voltaje y la corriente. La computadora portátil 
 es una carga no lineal, la forma de onda del voltaje 
 sería la misma, pero esperamos una forma diferente 
-para la corriente. \\
+para la corriente. $^{\left[1\right]}$ \\
 
 La segunda parte consiste en diseñar y desarrollar 
 un controlador de CA compuesto por un DIAC y un 
@@ -569,10 +572,25 @@ control de potencia que se logra variando el ángulo de
 conducción del QUADRAC, de 30$^{\circ}$ a 160$^{\circ}$ 
 cuando fluye la 
 corriente por un potenciómetro que tiene la función de 
-controlarla. \\
+controlarla. Al variar el potenciometro, es 
+posible controlar el
+ángulo de conducción.$^{\left[2\right]}$ \\
+
+\begin{figure}[h]
+\centering
+\includegraphics[clip,width=\columnwidth]{controller_values.png}
+\caption{Señales de corriente para diferentes valores \\
+del controlador.}
+\label{ACcontroller_plots}
+\end{figure}
 
 Se realizaron las mismas mediciones con el controlador AC 
-que se utilizaron anteriormente. Se comparó los valores de
+que se utilizaron anteriormente. se obtuvieron variaciones 
+según la posición del potenciometro, de tal forma que en 
+la medida que el valor del potenciómetro se hacía más
+pequeño, la onda se distorsionaba más. Esto se observa 
+claramente en la Figura \ref{ACcontroller_plots}. 
+Además, se compararon los valores de
 Factor de Potencia, Potencia Activa, Potencia de Distorsión
 y Distorsión Armónica, para el caso donde no hay controlador, 
 y para diferentes valores de resistencia (posiciones del 
@@ -610,15 +628,22 @@ consume el dispositivo, es decir, reduce o aumente
 el brillo de la lámpara. Sin embargo a medida que se 
 reduce el brillo del bombillo aumenta la Potencia de 
 Distorsión $D$, la Distorsión en la Corriente y se 
-reduce el Factor de Potencia. 
+reduce el Factor de Potencia. Esto sucede porque a
+medida que se aumenta el retraso del disparo, la onda 
+deja de ser sinusoidal y aparecen componentes armónicas 
+que la distosiones, epecialmente, las que se 
+generan por el pico del disparo. 
 
 \section{CONCLUSIONES}
 
-La carga resistiva muestra un factor de potencia de 
-casi unitario. La carga inductiva tiene una forma de 
+De acuerdo con los resultados obtenidos en esta práctica, 
+se puede concluir que las cargas resistivas muestran 
+un factor de potencia de 
+casi unitario. En cambio, una carga inductiva, como un 
+taladro, inductiva tiene una forma de 
 corriente rizada gracias al tipo de motor que se 
-utiliza en el taladro. La carga no lineal muestra 
-una forma de onda rizada que depende del circuito 
+utiliza en el taladro. Y también, una carga no lineal 
+muestra una forma de onda rizada que depende del circuito 
 dentro del dispositivo electrónico. \\
 
 El dimmer permite regular la potencia de la bombilla. 
@@ -631,9 +656,7 @@ encendiendo y apagando durante las regiones positiva y
 negativa de la señal sinusoidal de entrada. Durante 
 la parte negativa de la señal de entrada, se obtendrá 
 el mismo tipo de respuesta, ya que tanto el DIAC como 
-el QUADRAC se pueden disparar en la dirección inversa. 
-Al variar la resistencia R, es posible controlar el
-ángulo de conducción.\\
+el QUADRAC se pueden disparar en la dirección inversa. \\
 
 Acerca de las cargas inductivas y no lineales, no se 
 debe utilizar el circuito dimmer, ya que ambos dependen 
@@ -646,10 +669,17 @@ de una carga resistiva.
 
 \begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to {\LaTeX}}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+\bibitem{IEEEhowto:Rochelle}
+S. Rochelle and T. Brian, \textit{Triac light dimmer}, University of Texas, Austin, TX, Rep., Feb. 2, 2005. Available at: 
+\url{http://us- ers.ece.utexas.edu/~kwasin-ski/_1_EE362L_Sample_Report_Light_Dim-mer.pdf }
+
+\bibitem{IEEEhowto:hart}
+H. W. Daniel, “Power Computations," in \textit{Power Electronics}, Valparaiso, IN: McGraw-Hill, 2011, pp. 21-54.
 
 \end{thebibliography}
 
 \end{document}
+
+
+%[2] H. W. Daniel, “Power Computations,” in Power Electronics, Valparaiso, IN: McGraw-Hill, 2011, pp. 21-54.
+%[3]https://es.wikipedia.org/wiki/Triac
