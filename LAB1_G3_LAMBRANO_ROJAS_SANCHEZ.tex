@@ -31,26 +31,25 @@
 
 \lstset{
 basicstyle=\footnotesize
-%,
-%numbers=left
 }
+
+\title{\textbf{Potencia en aplicaciones domésticas}}
+\author{
+  \IEEEauthorblockN{ Jorge Lambra\~no$^3$, Julian Rojas$^2$, 
+  Juan Sánchez$^3$}\\
+  \IEEEauthorblockA{\texttt{\small{$^1$jelambrano, $^2$drojasj, $^3$paradac @uninorte.edu.co
+   }}}}
+
+%Encabezado de reporte: Edite con su información.
+%\asignatura      {Mediciones e Instrumentación IEN 8435}
+%\grupoLab        {1}
+%\autores         {Kevin Acuña, María De La Rosa, 
+%                  Luis Torres, Gloria Zúñiga}
+%\uninorteEmails  {kacuna, mdlrosa, ltorres, gzuniga}
+%\title          {Lab 1: Título de la primera práctica}
 
 \begin{document}
 
-\title{\textbf{Laboratorio 1: Potencia \\ en aplicaciones domésticas}}
-\author{
-  \IEEEauthorblockN{ Jorge Lambra\~no$^3$, Julian Rojas$^2$, 
-  Juan Sánchez$^3$\vspace{0.2cm}}\\
-  \IEEEauthorblockA{\texttt{\small{$^1$jelambrano, $^2$drojasj,
-   $^3$paradac @uninorte.edu.co
-   }}}
-}
-
-\markboth{Laboratorio 1: Potencia en aplicaciones 
-domésticas}%
-{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls 
-for Journals}
-	
 \maketitle
 
 \begin{abstract}  
@@ -58,9 +57,7 @@ En el presente informe se exponen los resultados de las
 mediciones de potencia, tensión y corriente de diferentes
 dispositivos, asimismo se encuentra el diseño de un 
 circuito que permite controlar la potencia que disipa una 
-carga resistiva, utilizando DIACs y TRIACs. El lector 
-podrá encontrar una validación a los modelos teóricos 
-de la electrónica de potencia. 
+carga resistiva, utilizando DIACs y TRIACs. 
 \end{abstract}
 
 %-----------------------------------------------------------
@@ -70,19 +67,11 @@ de la electrónica de potencia.
 Armónico, Corriente, Distorsión, Factor de Potencia,  Potencia, Tensión, Transformada de Fourier, Voltaje. 
 \end{IEEEkeywords}
 
-%-----------------------------------------------------------
-\IEEEpeerreviewmaketitle
-%--------------------------------------------------------------------------
-
 \section{INTRODUCCIÓN}
 
 El objetivo principal de esta práctica es realizar 
 un análisis de la forma de onda y las mediciones 
-de tres tipos diferentes de carga. Dentro de la caja 
-de seguridad hay un fusible para proteger el equipo 
-de cualquier corto circuito. Se usó resistencia 
-de 1 $\Omega$ y 10 W para medir la corriente dividiendo 
-la tensión entre 1 para obtener el valor actual. 
+de tres tipos diferentes de carga.
 Todos los dispositivos electrónicos están compuestos 
 de resistencias, condensadores e inductancias, un 
 soldador es una carga lineal resistiva, requieren calor 
@@ -122,35 +111,26 @@ portátiles, un pequeño taladro y un cautin. Teniendo en
 cuenta los valores altos de tensión y corriente que se 
 pueden encontrar en instalaciones eléctricas domésticas, se
 tomaron todas las precausiones necesarias para garantizar 
-seguridad a los dispositivos, instrumentos de medición y 
-a las personas que realizan la medición. Para poder 
-obtener los valores de tensión, corriente y corriente se 
-diseñó un circuito que junto con el osciloscopio, es capaz de
+seguridad a los dispositivos, a los instrumentos de 
+medición y a las personas que realizan la medición. 
+Para poder obtener los valores de tensión, corriente y 
+corriente se 
+diseñó un circuito que junto con el osciloscopio, 
 permite la obtención de valores de tensión y corriente. El 
 diseño del circuito se encuentra ilustrado en la Figura 
-\ref{circuit_diagram}. \\
-
-%The purpose of this practice is to measure the 
-%power consumption on electrical home devices, such 
-%as a laptop, a drill and a soldering iron. Taking into 
-%account that they work with high values of voltage 
-%and current compared with previous labs, precautions 
-%were taken in order to protect the devices and our 
-%integrity. The Figure \ref{circuit_diagram} 
-%shows the circuit proposed by the teacher to measure 
-%voltage and current safely. 
+\ref{circuit_diagram}. 
 
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=0.9\columnwidth]{circuit_diagram.png}
+\includegraphics[clip,width=0.7\columnwidth]{circuit_diagram.png}
 \caption{Circuito utilizado para la obtención \\
 de los valores de corriente y tensión.}
 \label{circuit_diagram}
 \end{figure}
 
 \textit{CH1} y \textit{CH2} representan los puntos donde
-se toman el osciloscopio toma las medidas a través de las 
-sondas de los canales 1 y 2 del osciloscopio,
+el osciloscopio toma las medidas a través de las 
+sondas de los canales 1 y 2,
 \textit{Phase} y \textit{N} corresponden a la fase y 
 al neutro de la red a la que se conecta el circuito. 
 \textit{V\textsubscript{ac}} representa 
@@ -165,30 +145,14 @@ medición.\\
 Se puede observar del
 gráfico que el valor de tensión que cae en el dispositivo
 es la diferencia de los datos que se obtienen en los canales 
-del osciloscopio. $V_L = CH1 - CH2$. Y la corriente que 
+del osciloscopio. $V_L = CH1 - CH2$. Y también,  
+la corriente que 
 pasa a través del dispositivo es la razón entre la tensión 
 que se obtiene en el canal \textit{CH2} y el valor de la 
 resistencia. Esto es el valor del canal, puesto que 
 la resistencia es de 1 $\Omega$. Esta información es muy
 últil para los cálculos de potencia que se explicarán más 
-adelante.\\
-
-%obtained from the university phase line, \textit{Fuse}
-%represents a 3A circuit breaker, \textit{Load} represents 
-%the load and \textit{Rshunt} 
-%represents the 1 $\Omega$ and 10 W 
-%power resistor. We chose a small value for the resistor 
-%to do not affect the functioning of the circuit. \\
-
-%The gauge of the wire was selected depending on maximum 
-%current needed by the higher power load according to 
-%electrical parameters 
-%of each device. Current values of devices are 
-%shown on the Table \ref{current_table}. Based on this, 
-%AWG 14 wire was selected to build the power meter, because 
-%it is able to conduct a maximum of 15 A\textsubscript{rms}.
-%In addition to this, the circuit uses a 3A fuse to protect
-%load and wires of high currents.\\
+adelante.
 
 \begin{table}[h]
 \centering
@@ -208,13 +172,13 @@ Resistencia & 10 & - & 3.17 \\ \hline
 
 Con respecto al calibre del alambre, fue seleccionado 
 dependiendo de la máxima corriente que necesita cada 
-dispoitivo, de acuerdo con los parámetros eléctricos 
+dispoitivo de acuerdo con los parámetros eléctricos 
 que se muestran en la descripción del dispositivo. Estos
 valores de corriente son mostrados en la Tabla
 \ref{current_table}. Basándose en la 
 Tabla \ref{current_table} se seleccionó un alambre 
 AWG 14 capaz de soportar una corriente máxma de 
-15A\textsubscript{rms}, puesto que es que utiliza 
+15A\textsubscript{rms} puesto que es que utiliza 
 normalmente en instalaciones eléctricas domésticas. 
 La corriente máxima que sorporta el fusible es 
 3A\textsubscript{rms}, se escogió este valor basándose
@@ -223,20 +187,13 @@ resistencia. \\
 
 El circuito se introdujo dentro de una caja 4x4, el 
 fusible se ubicó de tal forma que no fuese necesario 
-abrir la caja en caso que fuera necesario reemplazarlo. 
+abrir la caja para reemplazarlo. 
 Además se colocaron 
-cuatro borneras para poder medir de forma más segura 
-usando las sondas del osciloscopio. \\
-
-%The circuit is inside a 4x4 box with a fuse holder to 
-%change the breaker, 4 measuring terminals; the white 
-%one for neutral, green one for ground and 
-%both black one for phase. The box is shown in the 
-%Figure \ref{circuit_box}. \\
+cuatro borneras para poder medir de forma más segura. 
 
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=\columnwidth]{circuit_box.png}
+\includegraphics[clip,width=0.7\columnwidth]{circuit_box.png}
 \caption{Imagen del montaje del circuito.}
 \label{circuit_box}
 \end{figure}
@@ -259,28 +216,9 @@ menos constante, el valor de la Distorsión Total Armónica
 de Corriente \textit{THD\textsubscript{I}} varíe segun 
 la carga que se esté midiendo.  \\
 
-%For this practice three different loads are chosen to 
-%analize their voltage and current waveform: 
-%a soldering iron 
-%like resistive load, a drill like inductive load and 
-%a laptop like non-linear load. These loads are conected 
-%to an electrical outlet, using the power meter. Owing to 
-%high electrical network inertia, the voltage waveform do
-%not depend on the load. For this reason, the voltage signal
-%is similar in all measurings. However, current waveform 
-%depend on impedance load and voltage, and the first 
-%parameter is realted to load features. Therefore, the 
-%power analysis will be centered on current waveform.\\
-
-%\subsubsection{Solderin Iron (resistive load)}
-%The current waveform is a pure sine signal and it does not 
-%present any distortion and between voltage and current there
-%are not phase difference. This can be observed in the Figure
-%\ref{original_resistive_load}. 
-
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=\columnwidth]{original_waveform_cautin.png}
+\includegraphics[clip,width=0.9\columnwidth]{original_waveform_cautin.png}
 \caption{Ondas de tensión y corriente para una carga
 resistiva.}
 \label{original_resistive_load}
@@ -291,31 +229,22 @@ La onda de corriente para esta carga fue una señal
 sinusoidal que no presentaba ninguna distorsión y además 
 se encontraba en fase con la onda de voltaje. Las imágenes
 de las formas de onda que se obtivieron en el osciloscopio 
-se obseervan en la Figura \ref{original_resistive_load}. \\
-
-%Additionally, in a resistive load, product between 
-%current and voltage always 
-%is positive, this means that soldering iron is a power 
-%consumer and it is not able to supply energy. 
-
+se observan en la Figura \ref{original_resistive_load}. 
 Adicionalmente, en una carga resistiva, el producto de la 
 onda de corriente y tensión siempre es positivo, esto 
 significa que un cautin funciona siempre como un 
-consumidor de potencia ya que por su naturaleza no es 
-capaz de entregar energía. \\
+consumidor de potencia. \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=\columnwidth]
+\includegraphics[clip,width=0.9\columnwidth]
 {zoomed_current_furier_coefficients_resistive.png}
 \caption{Coeficientes de Fourier de la onda de corriente \\
 para una carga resistiva.}
 \label{fourier_corrent_coefficients_resistive}
 \end{figure}
 
-La Transformada de Fourier permite identificar las 
-componentes armónicas de la señal de corriente. 
-De acuerdo con la Figura 
+De acuerdo con la Transformada de Fourier de la Figura 
 \ref{fourier_corrent_coefficients_resistive}, la onda 
 de corriente solamente tiene la componente de la frecuencia 
 fundamental (60Hz), las demás son despresiables. 
@@ -324,21 +253,12 @@ Por tanto, no hay distorsión, el factor de potencia
 Total Armónica de Corriente 
 \textit{THD\textsubscript{I}} es muy pequeña. Esto lo 
 confirma la Salida 1, en donde el Factor de Potencia es 
-0.9989, la potencia activa \textit{P} es muy alta en 
-comparación a la potencia reactiva \textit{Q} y a la 
-potenicia de distorsión \textit{D} 
+0.999, la potencia activa \textit{P} es muy alta en 
+comparación a la potencia reactiva \textit{Q}, la 
+potencia de distorsión \textit{D} 
 y la Distorsión Armónica de Corriente 
 \textit{THD\textsubscript{I}} es 4\%. 
 
-%Fourier Transform allow to identify harmonic components of
-%current signal. According to Figure
-%\ref{fourier_corrent_coefficients_resistive}, current 
-%waveform of a resistive load only have a 60 Hz component
-%and it does not have any different harmonic component. So, 
-%there are not distortion, the power factor \textit{PF} is 
-%high and Total Harmonic Distortion \textit{THD} is 
-%very small.
-%This is an important feature from resistive loads.  
 
 \begin{lstlisting}[caption = Carga resistiva.]
 T     =     0.0167 s 
@@ -360,24 +280,22 @@ THD_I =     4.0154 %
 
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=\columnwidth]
+\includegraphics[clip,width=0.9\columnwidth]
 {original_waveform_drill.png}
 \caption{Ondas de tensión y corriente para una carga
 inductiva.}
 \label{original_inductive_load}
 \end{figure}
 
-El comportamiento de la corriente en una carga inductiva 
-es diferente al ocmportamiento en una carga resistiva. 
 La forma de la corriente no es una puramente sinusoidal,
 aparecen compoenentes armónicas que distorsionan la forma 
 de la señal. La forma de onda de la corriente
 se puede observar en la Figura 
-\ref{original_inductive_load}.\\ 
+\ref{original_inductive_load}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=\columnwidth]
+\includegraphics[clip,width=0.9\columnwidth]
 {zoomed_current_furier_coefficients_drill.png}
 \caption{Coeficientes de Fourier de la  
 onda de corriente \\ para una carga inductiva.}
@@ -385,10 +303,10 @@ onda de corriente \\ para una carga inductiva.}
 \end{figure}
 
 La presencia de las componentes armónicas se observa 
-con mayor claridad gracias a la Transformada de Fourier, 
-esta transformada aparece en la Figura 
+con mayor claridad gracias a la Transformada de Fourier
+en la Figura 
 \ref{fourier_corrent_coefficients_inductive}.
-La Transformada de Fourier de la señal de corriente 
+Según ésta, la señal de corriente 
 presenta fuertes componentes armónicas en las frecuencias
 $3 f_0$, $5 f_0$, $7 f_0$  y $9 f_0$, donde $f_0$ es la 
 frecuencia fundamental (60Hz). Además de las componentes 
@@ -411,27 +329,26 @@ de las cargas inductivas. \\
 %slow respect to voltage signal.
 
 A diferencia de una carga resistiva, la mediciones y 
-los cálculos de potenicia en un taladro dieron como 
-resultado un valor de  
-Potencia Reactiva $Q$ y de Distorsión Total Armónica 
-de Corriente mucho más alto. Tanto así que hacen 
+los cálculos de potencia en un taladro dieron como 
+resultado un valor mucho más alto en la  
+Potencia Reactiva $Q$ y en la Distorsión Total Armónica 
+de Corriente. Tanto así que hacen 
 que el valor del Factor de Potencia $pf$ sea muy bajo, 
 aproximadamente 0.51. Los motores y otras cargas 
 inductivas, por lo general tienen un factor de potencia 
 más alto (entre 0.75 y 0.9), una causa por la cual el 
 factor de potencia durante la medición fue mucho más 
-bajo que estos valores es la presencia de un circuito 
-eléctrico que regula la velocidad y el torque del 
-motor del taladro. Este circuito electrónico para 
-valores bajos de velocidad, genera distorsión en la 
+bajo que lo esperado es la presencia de un circuito 
+electrónico que regula la velocidad y el torque del 
+taladro. Este circuito electrónico genera distorsión en la 
 señal de corriente la cual tiene el efecto de  
 aumentar el \textit{THD\textsubscript{I}} y la Potencia 
 de Distorsión $D$ y por tanto, reducir el Factor de 
 Potencia. En la segunda parte de este informe se analizará
 más detallamente el efecto de circuitos eléctronicos 
-controladores de potencia. \\
+controladores de potencia. 
 
-\begin{lstlisting} [caption = {Output for inductive load.}
+\begin{lstlisting} [caption = {Carga inductiva.}
 \label{output_inductive}]
 T     =     0.0167 s 
 f0    =    59.9520 Hz 
@@ -471,7 +388,7 @@ componentes armónicas con valores bastante altos.
 
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=\columnwidth]
+\includegraphics[clip,width=0.9\columnwidth]
 {original_waveform_computer.png}
 \caption{Ondas de tensión y corriente para una carga
 no-lineal.}
@@ -481,42 +398,32 @@ no-lineal.}
 Si se aplica la Trasformada de Fourier a la señal de 
 corriente, se obtiene la Figura 
 \ref{fourier_corrent_coefficients_nonlinear}. Se observa
-que la magnitud de la segunda compoenente de frecuencia 
+que la magnitud de la segunda componente de frecuencia 
 es mayor que la componente de la frecuencia fundamental. 
 Y las compoenentes armónicas siguientes 
-también tienen un valor bastante alto. 
+también tienen un valor bastante alto. \\
 
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=\columnwidth]
+\includegraphics[clip,width=0.9\columnwidth]
 {zoomed_current_furier_coefficients_computer.png}
 \caption{Coeficientes de Fourier de la onda de corriente\\
 para una carga no-lineal.}
 \label{fourier_corrent_coefficients_nonlinear}
 \end{figure}
 
-%Nevertheless, a laptop does not have reactives elements 
-%like elctrical coils, the power factor values is very 
-%low. The electronics circuits inside a laptop (or other 
-%complex electronic device) do not respond linear way. 
-%For this reason, current waveform presents a lot of 
-%distortion, as a result, Harmonic Power $D$ and $THD_I$ 
-%value are very high while $PF$ is small. 
 A pesar que el computador portátil no posee grandes 
-elementos rectivos, en comparación al motor de un taladro, 
+elementos reactivos, en comparación al motor de un taladro, 
 el Factor de Potencia que se obtuvo fue muy bajo. 
 Esto se debe a que los circuitos electrónicos no presentan
-un comportamiento lineal en el consumo de la corriente.
-El comportamiento no-lineal de este tipo de dispositivos 
-es la causa de la alta distorisión de la onda de corriente, 
-como resultado, el valor del Factor de Potencia \textit{pf}
+un comportamiento lineal en el consumo de la corriente, lo 
+cual  
+es la causa de la alta distorisión de la onda de corriente. 
+Como resultado, el valor del Factor de Potencia \textit{pf}
 es bajo, mientras que los valores de la 
 Potencia de Distorsión $D$ y de
 la Distorsión Total Armónica de Corriente son muy altos. 
-En la Salida 3, pueden observarse los valores del Factor 
-de Potencia, Potencia Activa $P$ y Potencia de 
-Distorsión $D$ y Distorsión Total Armónica de Corriente 
-y Tensión. 
+En la Salida 3, pueden observarse todos estos valores. 
 
 \begin{lstlisting} [caption = carga no-lineal.]
 T     =     0.0167 s 
@@ -536,30 +443,20 @@ THD_I =   164.9239 %
 
 \subsection{Controlador AC}
 
-Para la segunda parte de esta práctica, se diseñó un 
-circuito usando tiristores para controlar la cantidad 
-de potencia consumida por un bombillo. La intensidad 
-de la luz del bombillo es controlada por medio de un 
-potenciómetro. El circuito que se utilizó se muestra 
-en la Figura \ref{ACcontroller}. 
-
-%For the second part of the practice, a 
-%circuit using thyristors  was desinged to control 
-%the amount of power delivered to the light bulb. 
-%The input is the 120 V AC and 
-%the output is an AC waveform where there is a delay angle 
-%before triggering the AC voltage. The phase control is 
-%done with a potentiometer. The circuit designed is shown 
-%in the Figure \ref{ACcontroller}.
-
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=\columnwidth]{controller.png}
+\includegraphics[clip,width=0.6\columnwidth]{controller.png}
 \caption{Circuito del controlador AC.}
 \label{ACcontroller}
 \end{figure}
 
-Cuando el voltaje a través del capacitor alcanza el 
+Para la segunda parte de esta práctica, se diseñó un 
+circuito usando tiristores para controlar por medio 
+de un potenciómetro la cantidad 
+de potencia consumida por un bombillo. 
+El circuito que se utilizó se muestra 
+en la Figura \ref{ACcontroller}. 
+Cuando el voltaje en el capacitor alcanza el 
 voltaje de ruptura del DIAC, éste se encuentra 
 parcialmente descargado por el DIAC a través de la 
 compuerta del QUADRAC. En ese momento el QUADRAC 
@@ -572,13 +469,13 @@ control de potencia que se logra variando el ángulo de
 conducción del QUADRAC, de 30$^{\circ}$ a 160$^{\circ}$ 
 cuando fluye la 
 corriente por un potenciómetro que tiene la función de 
-controlarla. Al variar el potenciometro, es 
+controlarla. Al variar el potenciómetro, es 
 posible controlar el
-ángulo de conducción.$^{\left[2\right]}$ \\
+ángulo de conducción.$^{\left[2\right]}$ 
 
 \begin{figure}[h]
 \centering
-\includegraphics[clip,width=\columnwidth]{controller_values.png}
+\includegraphics[clip,width=0.9\columnwidth]{controller_values.png}
 \caption{Señales de corriente para diferentes valores \\
 del controlador.}
 \label{ACcontroller_plots}
@@ -586,7 +483,7 @@ del controlador.}
 
 Se realizaron las mismas mediciones con el controlador AC 
 que se utilizaron anteriormente. se obtuvieron variaciones 
-según la posición del potenciometro, de tal forma que en 
+según la posición del potenciómetro, de tal forma que en 
 la medida que el valor del potenciómetro se hacía más
 pequeño, la onda se distorsionaba más. Esto se observa 
 claramente en la Figura \ref{ACcontroller_plots}. 
@@ -596,7 +493,7 @@ y Distorsión Armónica, para el caso donde no hay controlador,
 y para diferentes valores de resistencia (posiciones del 
 potenciómetro). Los resultados 
 de esas comparaciones se observan en la Tabla 
-\ref{table:controller}. \\
+\ref{table:controller}. 
 
 
 \begin{table}[h]
@@ -649,23 +546,21 @@ dentro del dispositivo electrónico. \\
 El dimmer permite regular la potencia de la bombilla. 
 Teniendo en cuenta que una bombilla es resistiva, la 
 efectividad depende del voltaje y la corriente que se 
-encuentra en éste. \\
-
-El circuito controla la alimentación de la bombilla 
+encuentra en éste. El circuito controla la alimentación 
+de la bombilla 
 encendiendo y apagando durante las regiones positiva y 
 negativa de la señal sinusoidal de entrada. Durante 
 la parte negativa de la señal de entrada, se obtendrá 
 el mismo tipo de respuesta, ya que tanto el DIAC como 
 el QUADRAC se pueden disparar en la dirección inversa. \\
 
-Acerca de las cargas inductivas y no lineales, no se 
-debe utilizar el circuito dimmer, ya que ambos dependen 
-del factor de potencia y de la forma de onda de tensión 
-y corriente. \\
-
 Los dispositivos electrónicos, como el DIAC y el QUADRAC, 
 permiten construir circuitos para controlar la potencia 
 de una carga resistiva.
+Acerca de las cargas inductivas y no lineales, no se 
+debe utilizar el circuito dimmer, ya que ambos dependen 
+del factor de potencia y de la forma de onda de tensión 
+y corriente. 
 
 \begin{thebibliography}{1}
 
