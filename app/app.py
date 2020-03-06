@@ -35,13 +35,14 @@ class CSVLabel(LabelFrame):
 
         super(CSVLabel, self).__init__(*args, **kwargs)
 
-        self._filename = ""        
+        self._filename = tk.StringVar()
 
         label = Label(self, text="File: ")
         # label.pack(padx=10, pady=5, side=tk.LEFT)
         label.grid(row=0, column=0, padx=10, pady=5)
 
-        self._textbox = Text(self, height=1, width=57)
+        # self._textbox = ttk.Entry(self, height=1, width=57)
+        self._textbox = ttk.Entry(self, textvariable=self._filename)
         # self._textbox.pack(padx=10, pady=5, side=tk.LEFT)
         self._textbox.grid(row=0, column=1, padx=10, pady=5)
 
@@ -56,14 +57,18 @@ class CSVLabel(LabelFrame):
         temp_filename = filedialog.askopenfilename(initialdir =  ".", title = "Select A File", filetypes = (("csv files","*.[c-C][s-S][v-V]"),("all files","*.*")) )
         # self._filename = filedialog.askopenfilename(initialdir =  "/", title = "Select A File")
         # self._textbox.delete(tk.START, tk.END)
-        if temp_filename:
-            self.filename = temp_filename
-            self._textbox.delete("1.0", tk.END)
-            self._textbox.insert(tk.END, self._filename)
+        # print(temp_filename)
+        if len(temp_filename):
+            # print('im here')
+            self._filename.set(temp_filename)
+            # self._textbox.delete('1.0', tk.END)
+            # self._textbox.update()
+            # self._textbox.insert(tk.END, self._filename)
+            # self._textbox.update()
 
     def getFilename(self):
-        return self._textbox.get("1.0", tk.END)[:-1]
-
+        # return self._textbox.get('1.0', tk.END)[:-1]
+        return self._filename.get()
 
 
 class App(Tk):
@@ -169,8 +174,23 @@ class App(Tk):
         if not os.path.isfile(self.currentlabel.getFilename()):
             self.popupBonus("Error", "ERROR:\n Current CSV file does not exist!")
             return
-        
-        csv_reader = CSVReader(self.voltagelabel.getFilename(), self.currentlabel.getFilename())
+
+        csv_reader = None
+        voltage_ext = self.voltagelabel.getFilename()[-4:].lower()
+        current_ext = self.currentlabel.getFilename()[-4:].lower()
+        print(voltage_ext)
+        print(current_ext)
+        if voltage_ext == '.csv' and current_ext == '.csv':
+            csv_reader = CSVReader(self.voltagelabel.getFilename(), self.currentlabel.getFilename())
+        elif voltage_ext == '.txt' and current_ext == '.txt':
+            csv_reader = TXTReader(self.voltagelabel.getFilename(), self.currentlabel.getFilename())
+        elif voltage_ext != current_ext:
+            self.popupBonus("Error", "ERROR:\n Current file and Voltage file are not the same format!")
+            return
+        else:
+            self.popupBonus("Error", "ERROR:\n Invalid format to current or voltage file!")
+            return
+
         try:
             csv_reader.calcData()
         except Exception as e:
